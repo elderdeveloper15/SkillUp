@@ -1,1 +1,35 @@
-<p>landing works!</p>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="landing.component.css">
+  </head>
+
+<body style="background-color: #F2B477;"></body>  
+<!-- BARRA SUPERIOR -->
+<div class="toolbar" role="banner">
+    <img width="40" />
+    <span class="skill">Skill</span><span class="up">Up</span>
+    <div class="navigation">
+      <a href="#">INICIO</a>
+      <a href="#">SOBRE NOSOTROS</a>
+      <a href="#">NUESTRO PROYECTO</a>
+    </div>
+    <form class="search-form">
+      <input type="search" placeholder="Buscar...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  
+  <!-- Encabezado "Comencemos" -->
+<div class="title">
+    <h1>Comencemos</h1>
+  </div>
+
+<!-- RECTÁNGULO BLANCO -->
+<div class="white-box">
+    <div class="button-container">
+      <button>Estudiante</button>
+      <button>Empresa</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
