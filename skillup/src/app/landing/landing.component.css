@@ -17,6 +17,12 @@
     h6 {
       margin: 8px 0;
     }
+
+    body {
+      background-image: url('https://i.pinimg.com/564x/e7/e7/1f/e7e71f3e7a7e42b6f844da26d6af36f9.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
   
     p {
       margin: 0;
@@ -153,6 +159,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        
       }
     
       .button-container {
@@ -190,6 +197,16 @@
 
       .button-container button:hover {
         background-color: antiquewhite;
+      }
+
+      input[type="text"] {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        padding: 10px;
+        margin: 10px;
+        border: none;
       }
       
     
