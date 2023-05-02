@@ -1,0 +1,224 @@
+
+   :host {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 14px;
+      color: #008cff;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 8px 0;
+    }
+  
+    p {
+      margin: 0;
+    }
+  
+    .spacer {
+      flex: 1;
+    }
+  
+    .toolbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      background-color: #F2B477;
+      color: rgb(0, 0, 0);
+      font-weight: 900;
+      font-family: Helvetica;
+      font-size: 50px;
+      letter-spacing: 4px;
+    }
+
+    .toolbar .skill {
+        color: #FFFFFF; /* color blanco */
+      }
+      
+      .toolbar .up {
+        color: #1C748C; /* color azul */
+      }
+
+      .toolbar .navigation {
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        align-items: center;
+        font-family: Arial;
+        font-size: 16px;
+        margin-left: 300px;
+      }
+
+      .navigation {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+      }
+      
+      .navigation a {
+        color: #434343;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      
+      .navigation a:hover {
+        color: #4b86b4;
+      }
+
+    .search-form {
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        border-radius: 30px;
+        overflow: hidden;
+      }
+      
+      .search-form input[type="search"] {
+        width: 200px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background-color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+      
+      .search-form button[type="submit"] {
+        width: 50px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        outline: none;
+        background-color: #fff;
+        font-size: 16px;
+        color: #F2B477;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
+      
+      .search-form button[type="submit"] i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Estilos para el encabezado "Comencemos" */
+      .title {
+        text-align: center;
+        margin-top: 150px;
+      }
+      
+      .title h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #434343;
+        font-family: Poppins;
+        font-size: 50px;
+        letter-spacing: 4px;
+      }
+
+      .white-box {
+        margin-top: 180px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 70%;
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: -350px;
+      }
+      
+      .button-container button {
+        margin: 0 130px;
+        padding: 3.5% 7%; 
+        border: none;
+        background: none;
+        font-family: Arial;
+        font-size: 16px;
+        font-weight: bold;
+        color: #F2B477;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .button-container button:nth-child(1) {
+        background-color: antiquewhite; /* Agrega esta línea */
+        position: relative;
+      }
+      .button-container button::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #F2B477;
+      }
+
+      .button-container button:hover {
+        background-color: antiquewhite;
+      }
+      
+    
+    /* Responsive Styles */
+    @media screen and (max-width: 767px) {
+      .card-container > *:not(.circle-link) ,
+      .terminal {
+        width: 100%;
+      }
+  
+      .card:not(.highlight-card) {
+        height: 16px;
+        margin: 8px 0;
+      }
+  
+      .card.highlight-card span {
+        margin-left: 72px;
+      }
+  
+      svg#rocket-smoke {
+        right: 120px;
+        transform: rotate(-5deg);
+      }
+    }
+  
+    @media screen and (max-width: 575px) {
+      svg#rocket-smoke {
+        display: none;
+        visibility: hidden;
+      }
+    }
+ 
