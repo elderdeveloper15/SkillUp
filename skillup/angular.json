@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "skillup"
+  "defaultProject": "skillup",
+  "cli": {
+    "analytics": "51f42d8d-8f49-46bf-933c-9b65e21c21bf"
+  }
 }
