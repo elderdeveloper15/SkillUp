@@ -8,6 +8,19 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .imagen h2{
+      text-rendering: optimizeSpeed;
+      font-size: 70px;
+      font-family: Arial;
+      font-weight: bold;
+      letter-spacing: .3px;
+      position:relative;
+      top: -275;
+      left: 325px;
+      text-align: center;
+      text-align-last: left;
+  }
+
   h1{
       text-rendering: optimizeSpeed;
       font-size: 20px;
@@ -57,13 +70,6 @@
     letter-spacing: 4px;
   }
 
-  .toolbar .skill {
-    color: #FFFFFF; /* color blanco */
-  }
-      
-  .toolbar .up {
-    color: #F2B477; /* color azul */
-  }
 
   .toolbar .navigation {
     position: relative;
@@ -220,6 +226,13 @@
         justify-content: center;
   }
 
+  .imagen img {
+      padding: 200px 300px;
+      width: 20%;
+      height: auto;
+
+    }
+
   svg#clouds {
       position: fixed;
       bottom: -160px;
@@ -233,7 +246,6 @@
 <body style="background-color: #1C748C;"></body>
   <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <span class="skill">Skill</span><span class="up">Up</span>
     <nav class="navigation">
       <a href="#">INICIO</a>
       <a href="#">SOBRE NOSOTROS</a>
@@ -245,6 +257,13 @@
     </form>
 </div>
 
+
+<div class="imagen">
+  <img src="https://sac-webapp-live.s3.amazonaws.com/static/icons/ICONOS-27.png" alt="imagen" class="derecha">
+  <h2>
+    <span style="color:#FFFFFF">Skill</span><span style="color:#F2B477">Up</span>
+  </h2>
+</div>
 
   <!-- RECTÁNGULO BLANCO -->
 <div class="white-box">
@@ -270,6 +289,7 @@
 
   </div>
 
+ 
   
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="358.677" viewBox="0 0 2611.084 358.677">
     <title>Gray Clouds Background</title>
