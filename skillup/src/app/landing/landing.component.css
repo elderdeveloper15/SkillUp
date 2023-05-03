@@ -161,16 +161,16 @@
         justify-content: center;
         
       }
-    
+    /*botones*/
       .button-container {
         display: flex;
         justify-content: center;
-        margin-top: -350px;
+        margin-top: 0px;
       }
       
       .button-container button {
         margin: 0 130px;
-        padding: 3.5% 7%; 
+        padding: 2.5% 7%; 
         border: none;
         background: none;
         font-family: Arial;
@@ -185,7 +185,7 @@
         background-color: antiquewhite; /* Agrega esta línea */
         position: relative;
       }
-      .button-container button::after {
+      .button-container button:first-child::after {
         content: "";
         position: absolute;
         bottom: 0px;
@@ -194,20 +194,87 @@
         height: 5px;
         background-color: #F2B477;
       }
+      
 
       .button-container button:hover {
         background-color: antiquewhite;
       }
 
-      input[type="text"] {
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30%;
-        padding: 10px;
-        margin: 10px;
-        border: none;
+      .form-container {
+        width: 50%;
+        padding: 3px;
+        margin-left: -200px;
+        margin-top: px;
       }
+           
+      .form-container form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+      
+      .form-container label {
+        margin-top: 5px;
+      }
+      
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="password"],
+      .form-container input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 1px;
+        border-color: #ccc;
+        border-width: 1px;
+      }
+
+      .white-box input[type="submit"] {
+        width: 150px;
+        height: 60px;
+        padding: 0;
+        border: none;
+        outline: none;
+        background-color:#F2B477;
+        font-size: 16px;
+        color: #ffffff;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        }
+    
+        
+        .upload-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2px;
+          background-color: #E8E8E8;
+          width: 20%;
+          height: 40%;
+          position:absolute;
+          left: 60%;
+          top: 25%;
+          background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png');
+          background-position: center;
+          background-size: contain;
+          border-radius: 50%;
+        }
+        
+        .upload-button {
+          font-size: 2rem;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #F2B477;
+          color: #FFFFFF;
+          border: none;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+        
       
     
     /* Responsive Styles */

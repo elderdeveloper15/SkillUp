@@ -28,11 +28,32 @@
 <div class="white-box">
     <div class="button-container">
       <button>Estudiante</button>
-      <label for="username">Nombre de usuario:</label>
       <button>Empresa</button>
     </div>
-<input type="text" id="username" name="username">
-
+    <div class="form-container">
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña">
+        <label for="curriculum">Currículum (PDF):</label>
+        <input type="file" id="curriculum" name="curriculum" accept=".pdf">
+      </form>
+    </div>
+    <div class="upload-container">
+      <div class="image-container">
+        <!-- Imagen de perfil -->
+      </div>
+      <button class="upload-button">+</button>
+    </div>
+    <input type="submit" value="Registrarse">
   </div>
+  
+
+  
   <router-outlet></router-outlet>
   
