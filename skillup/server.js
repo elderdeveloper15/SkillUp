@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 
 require("./src/routes/administrador.routes")(app);
 require("./src/routes/empresa.routes")(app);
+require("./src/routes/curso.routes")(app);
 
 
 // set port, listen for requests

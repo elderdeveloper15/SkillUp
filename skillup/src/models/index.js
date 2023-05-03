@@ -26,6 +26,7 @@ db.sequelize = sequelize;
 
 db.administrador = require("./administrador.model.js")(sequelize, Sequelize);
 db.empresa = require("./empresa.model.js")(sequelize, Sequelize);
+db.curso = require("./curso.model.js")(sequelize, Sequelize);
 
 
 module.exports = db;
