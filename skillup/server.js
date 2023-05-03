@@ -33,6 +33,7 @@ require("./src/routes/administrador.routes")(app);
 require("./src/routes/empresa.routes")(app);
 require("./src/routes/curso.routes")(app);
 require("./src/routes/estudiante.routes")(app);
+require("./src/routes/oferta.routes")(app);
 
 
 // set port, listen for requests
