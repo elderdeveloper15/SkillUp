@@ -30,6 +30,8 @@ app.get("/", (req, res) => {
 });
 
 require("./src/routes/administrador.routes")(app);
+require("./src/routes/empresa.routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
