@@ -3,34 +3,47 @@
     <link rel="stylesheet" type="text/css" href="landing.component.css">
   </head>
 
-<body style="background-color: #F2B477;"></body>  
-<!-- BARRA SUPERIOR -->
-<div class="toolbar" role="banner">
-    <img width="40" />
-    <span class="skill">Skill</span><span class="up">Up</span>
-    <div class="navigation">
-      <a href="#">INICIO</a>
-      <a href="#">SOBRE NOSOTROS</a>
-      <a href="#">NUESTRO PROYECTO</a>
-    </div>
-    <form class="search-form">
-      <input type="search" placeholder="Buscar...">
-      <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-  </div>
+<body style="background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed;"></body>
+<header>
+  <div class="toolbar" role="banner">
   
-  <!-- Encabezado "Comencemos" -->
-<div class="title">
-    <h1>Comencemos</h1>
+  <span class="skill">Skill</span>
+  <span class="up">Up</span></div>
+  <nav>
+    <ul>
+      <li><a href="#">INICIO</a></li>
+      <li><a href="#">SOBRE NOSOTROS</a></li>
+      <li><a href="#">NUESTRO PROYECTO</a></li>
+    </ul>
+  </nav>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar...">
+    <button><i class="fa fa-search"></i></button>
   </div>
+</header>
 
-<!-- RECTÁNGULO BLANCO -->
+</div>
+
 <div class="white-box">
-    <div class="button-container">
-      <button>Estudiante</button>
-      <button>Empresa</button>
-    </div>
-    <div class="form-container">
+  <div class="grid-container">
+    <div class="element-1">
+      <div class="grid-2-cols">
+        <div class="grid-item-1">
+          <div class="grid-item 1 button">
+            <div class="button-container">
+            <button>Estudiante</button>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item-2">
+              <div class="grid-item 2 button">
+                <div class="button-container">
+                <button>Empresa</button>
+                </div>
+              </div>
+            </div>
+        <div class="grid-item-3">
+            <div class="form-container">
       <form>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
@@ -44,16 +57,10 @@
         <input type="file" id="curriculum" name="curriculum" accept=".pdf">
       </form>
     </div>
-    <div class="upload-container">
-      <div class="image-container">
-        <!-- Imagen de perfil -->
+        </div>
+        <div class="grid-item-4">Elemento 1.4</div> 
       </div>
-      <button class="upload-button">+</button>
     </div>
-    <input type="submit" value="Registrarse">
+    <div class="element-2"> <input type="submit" value="Registrarse"></div>
   </div>
-  
-
-  
-  <router-outlet></router-outlet>
-  
+</div>
