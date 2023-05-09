@@ -1,66 +1,75 @@
 
 <head>
+  <meta charset="utf-8">
+
     <link rel="stylesheet" type="text/css" href="landing.component.css">
   </head>
-
-<body style="background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed;"></body>
-<header>
-  <div class="toolbar" role="banner">
+  <body style="background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed; overflow: auto;"></body>
+  <header>
+      <div class="logo" role="banner">
   
-  <span class="skill">Skill</span>
-  <span class="up">Up</span></div>
-  <nav>
-    <ul>
-      <li><a href="#">INICIO</a></li>
-      <li><a href="#">SOBRE NOSOTROS</a></li>
-      <li><a href="#">NUESTRO PROYECTO</a></li>
-    </ul>
-  </nav>
-  <div class="search-bar">
-    <input type="text" placeholder="Buscar...">
-    <button><i class="fa fa-search"></i></button>
-  </div>
-</header>
-
-</div>
-
-<div class="white-box">
-  <div class="grid-container">
-    <div class="element-1">
-      <div class="grid-2-cols">
-        <div class="grid-item-1">
-          <div class="grid-item 1 button">
-            <div class="button-container">
-            <button>Estudiante</button>
-            </div>
-          </div>
-        </div>
-        <div class="grid-item-2">
-              <div class="grid-item 2 button">
-                <div class="button-container">
-                <button>Empresa</button>
-                </div>
-              </div>
-            </div>
-        <div class="grid-item-3">
-            <div class="form-container">
-      <form>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos">
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo">
-        <label for="contraseña">Contraseña:</label>
-        <input type="password" id="contraseña" name="contraseña">
-        <label for="curriculum">Currículum (PDF):</label>
-        <input type="file" id="curriculum" name="curriculum" accept=".pdf">
-      </form>
-    </div>
-        </div>
-        <div class="grid-item-4">Elemento 1.4</div> 
+          <span class="skill">Skill</span>
+          <span class="up">Up</span></div>
+      <nav>
+          <ul>
+              <li><a href="#">INICIO</a></li>
+              <li><a href="#">SOBRE NOSOTROS</a></li>
+              <li><a href="#">NUESTRO PROYECTO</a></li>
+          </ul>
+      </nav>
+      <div class="search-bar">
+          <input type="text" placeholder="Buscar...">
+          <button><i class="fa fa-search"></i></button>
       </div>
-    </div>
-    <div class="element-2"> <input type="submit" value="Registrarse"></div>
+  </header>
+  
   </div>
-</div>
+  
+  <div class="white-box">
+      <div class="grid-container">
+          <div class="element-1">
+              <div class="grid-2-cols">
+                  <div class="grid-item-1">
+                      <div class="grid-item 1 button">
+                          <div class="button-container">
+                              <button>Estudiante</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="grid-item-2">
+                      <div class="grid-item 2 button">
+                          <div class="button-container">
+                              <button>Empresa</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="grid-item-3">
+                      <div class="form-container">
+                          <form>
+                              <label for="nombre">Nombre:</label>
+                              <input type="text" id="nombre" name="nombre">
+                              <label for="apellidos">Apellidos:</label>
+                              <input type="text" id="apellidos" name="apellidos">
+                              <label for="correo">Correo:</label>
+                              <input type="email" id="correo" name="correo">
+                              <label for="contraseña">Contraseña:</label>
+                              <input type="password" id="contraseña" name="contraseña">
+                              <label for="curriculum">Currículum (PDF):</label>
+                              <input type="file" id="curriculum" name="curriculum" accept=".pdf">
+                          </form>
+                      </div>
+                  </div>
+                  <div class="grid-item-4">
+      <label for="profile-picture" class="profile-picture-label">
+          <div class="profile-picture">
+              <img src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de.jpg?ver=6" alt="Foto de perfil">
+          </div>
+      </label>
+      <input type="file" id="profile-picture" name="profile-picture" accept=".png, .jpg, .jpeg" style="display: none;">
+  </div>
+  
+              </div>
+          </div>
+      </div>
+      <input type="submit" value="Registrarse">
+  </div>
