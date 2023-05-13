@@ -1,1 +1,388 @@
-<p>perfilempresa works!</p>
+<style>
+    body {
+        background-color: F2B477;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .grind-layout {
+        height: 700px;
+        display: grid;
+        grid-template-areas: 'encabezado encabezado' 'info descripcion';
+        grid-template-rows: 15% auto;
+        grid-template-columns: 30% auto;
+        background-color: #ffffff;
+    }
+/**************** Encabezado *************************/
+    .header {
+        grid-area: encabezado;
+        background-color: #F2B477;
+        overflow: hidden;
+        background-color: F2B477;
+        padding: 20px 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+ 
+    .header .search-bar {
+      float:left;
+      margin-bottom:auto;
+      margin-top:10px;
+    }
+     
+    .header .search-bar input[type="text"] {
+      padding: 8px;
+      border-radius: 60px;
+      border: none;
+      margin-right: 6px;
+      margin-bottom:auto;
+      margin-top:auto;
+    }
+     
+    .header .search-bar button[type="submit"] {
+      padding: 8px 12px;
+      border-radius: 60px;
+      background-color: #1C748C;
+      color: white;
+      border: none;
+    }
+     
+    /* Style the header links */
+    .header a {
+      float: left;
+      color: #434343;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 4px;
+      text-transform: none;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-weight: 900;
+    }
+     
+    /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+    .header a.logo {
+      font-size: 50px;
+      font-weight: bold;
+      color: FFFFFF;
+      font-weight: 900;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+    }
+     
+     
+    /* Change the color of up */
+    .header a.logo .up {
+      color: #1C748C;
+    }
+     
+    /* Change the background color on mouse-over */
+    .header a:not(.logo):hover {
+      color: #1C748C;
+    }
+     
+    /* Style the active/current link */
+    .header a.active { 
+      color: #1C748C;
+    }
+     
+    /* Float the link section to the right */
+    .header-right {
+      float: right;
+    }
+     
+    /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+        margin-left:none;
+      }
+     
+      .header-right {
+        float: none;
+        margin-left:4%;
+      } 
+    }
+    
+/**************************************************************/
+
+
+/************* Barra lateral ********************/
+
+    .barraizquierda {
+        grid-area: info;
+        background-color: #F2B477;
+        display: grid;
+        grid-template-areas: 'regreso' 'fotoperfil' 'nombre' 'infogeneral' 'desgeneral';
+        grid-template-rows: 1% 35% 5% ;
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    i.fas.fa-chevron-left {
+         grid-area: regreso;
+        font-size: 30px;
+        color: #ffffff;
+        margin-left: -250px;
+    }
+    
+    i.fas.fa-chevron-left:hover{
+        color: #1C748C;
+    }
+
+    .imagenperfil {
+        grid-area: fotoperfil;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #efefef;
+        margin-top: 50px;
+        margin-left: 15%;
+        border: 5px solid white;
+    }
+    
+    .nomestudiante {
+        grid-area: nombre;
+        margin-top: 10px;
+        font-family: Arial;
+        color:#ffffff;
+    }
+    
+    .infogeneral{
+        grid-area: infogeneral;
+        margin-top: 10px;
+        font-family: Arial;
+        color:#ffffff;
+        font-size: 12px;
+        text-align: start;
+        line-height: 2;
+    }
+    
+    .descrip{
+        grid-area: desgeneral;
+        font-family: Arial;
+        color:#ffffff;
+        font-style: italic;
+    }
+
+/**************************************************************/
+
+/************* Descripción general ********************/
+    .descripgeneral {
+        grid-area: descripcion;
+        background-color: #efefef;
+        display: grid;
+        grid-template-areas: 'crear' 'publicaciones';
+        grid-template-rows: 40% auto;
+        text-align: center;
+    }
+    
+    .crear{
+        grid-area: crear;
+        display: grid;
+        grid-template-areas: 'titulo titulo' 'trabajo curso';
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 20px solid white;
+        
+    }
+    
+    .crear h1{
+        grid-area: titulo;
+        font-size: 30px;
+    }
+    
+    .b1{
+        grid-area:trabajo;    
+    }
+    
+    .b2{
+        grid-area:curso;    
+    }
+    .crear button{
+        justify-self: space-between;
+        background-color: #1C748C;
+        color: #ffffff;
+        height: 100%;
+        border: none;
+        margin: 2px;
+        
+    }
+
+    .crear button:hover{
+        background-image: linear-gradient(-180deg,#f2b477,#f2b477 90%);
+        border-color: rgba(0, 0, 0, 0.35);
+        background-position: -.5em;
+    }
+    
+    .publire{
+        grid-area: publicaciones;
+        display: grid;
+        grid-template-areas: 'titulo2 carrusel' ;
+        grid-template-columns: 25% 75%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .publire h2{
+        grid-area:titulo2;
+        margin-left: 50px;
+        font-size: 20px;
+        
+    }
+    
+    .carousel {
+        grid-area:carrusel;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .carrousel img{
+        width:100%;
+        height:100%;
+    }
+    .carousel ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .carousel li {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    .carousel input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .carousel input[type="radio"]:checked ~ ul {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .carousel input[type="radio"]:checked ~ ul li {
+      scroll-snap-align: start;
+    }
+    
+    .carousel label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    
+    @media (min-width: 768px) {
+      .carousel label {
+        font-size: 3rem;
+      }
+    }
+
+/**************************************************************/
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/34c9ac171c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="grind-layout">
+        <div class="header">
+          <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+          <div class="header-right">
+            <a class="active" href="#inicio">Inicio</a>
+            <a href="#sn">Sobre Nosotros</a>
+            <a href="#about">Nuestro proyecto</a>
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar">
+              <button type="submit">Buscar</button>
+            </div>
+          </div>
+        </div>
+        <div class="barraizquierda">
+            
+            <a href="javascript:history.back()"><i class="fas fa-chevron-left"></i></a>
+            
+            <div class="imagenperfil"></div>
+            
+            <div class="nomestudiante">
+                 <span>Nombre de la empresa</span>
+            </div>
+            
+            <div class="infogeneral">
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <span>empresa@correo.com</span>
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <span>0000000000</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Dirección</span>    
+                </div>
+            </div>
+            
+            <div class="descrip">
+                <span>Descripción general de la empresa</span>
+            </div>
+        
+        </div>
+        <div class="descripgeneral">
+            <div class = "crear">
+               <h1>Crear una nueva publicación</h1>
+               <button class=b1 onclick="window.location.href='';">Oferta de trabajo</button>
+               <button class=b2 onclick="window.location.href='';">Curso disponible</button>
+            </div>
+            <div class="publire">
+                <h2>Publicaciones recientes</h2>
+                <div class="carousel">
+                <input type="radio" id="carousel-1" name="carousel[]" checked>
+                <input type="radio" id="carousel-2" name="carousel[]">
+                <input type="radio" id="carousel-3" name="carousel[]">
+                <input type="radio" id="carousel-4" name="carousel[]">
+                
+                <ul>
+                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
+                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
+                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
+                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</body>

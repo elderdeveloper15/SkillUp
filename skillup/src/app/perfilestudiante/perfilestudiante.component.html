@@ -116,44 +116,61 @@
 
 /************* Barra lateral ********************/
 
-    .barraizquierda {
+.barraizquierda {
         grid-area: info;
         background-color: #F2B477;
         display: grid;
-        grid-template-rows: 1% 35% 5%;
+        grid-template-areas: 'regreso' 'fotoperfil' 'nombre' 'infogeneral' 'desgeneral';
+        grid-template-rows: 1% 35% 5% ;
         justify-content: center;
         text-align: center;
 
     }
 
     i.fas.fa-chevron-left {
+         grid-area: regreso;
         font-size: 30px;
         color: #ffffff;
         margin-left: -250px;
     }
+    
+    i.fas.fa-chevron-left:hover{
+        color: #1C748C;
+    }
 
     .imagenperfil {
-        width: 100%;
-        height: 75%;
+        grid-area: fotoperfil;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         background-color: #efefef;
         margin-top: 50px;
+        margin-left: 15%;
         border: 5px solid white;
     }
     
     .nomestudiante {
+        grid-area: nombre;
         margin-top: 10px;
         font-family: Arial;
         color:#ffffff;
     }
     
     .infogeneral{
+        grid-area: infogeneral;
         margin-top: 10px;
         font-family: Arial;
         color:#ffffff;
         font-size: 12px;
         text-align: start;
         line-height: 2;
+    }
+    
+    .descrip{
+        grid-area: desgeneral;
+        font-family: Arial;
+        color:#ffffff;
+        font-style: italic;
     }
     
     .curriculum a{
@@ -202,7 +219,7 @@
         </div>
         <div class="barraizquierda">
             
-            <i class="fas fa-chevron-left"></i>
+          <a href="javascript:history.back()"><i class="fas fa-chevron-left"></i></a>
             
             <div class="imagenperfil"></div>
             
