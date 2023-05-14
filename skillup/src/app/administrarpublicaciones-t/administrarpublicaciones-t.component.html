@@ -1,1 +1,77 @@
-<p>administrarpublicaciones-t works!</p>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="administrarpublicaciones-t.component.css">
+    <script src="administrarpublicaciones-t.js"></script>
+  </head>
+      <div class="grid">
+        <div class="header">
+                <div class="admin-text">Administrador</div>
+        <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+        <div class="header-right">
+          <a href="#sn">Verificar Empresas</a>
+          <a href="#about">Administrar Publicaciones</a>
+        </div>
+      </div>
+        <div class="white-box">
+          <!-- Contenido del grid -->
+          <div class="grid2">
+            <div class="grid-item row1">
+              <!-- Contenido de la primera fila dividida en dos columnas -->
+              <div class="grid">
+                <div class="grid-trabajos-1">OFERTAS TRABAJO</div>
+                <div class="grid-cursos-2">CURSOS</div>
+              </div>
+            </div>
+            <div class="row2">
+                <div class="search-bar">
+                  <input type="text" placeholder="Buscar">
+                  <button type="submit">Buscar</button>
+                </div>
+                <div class="publicaciones-container">
+                  <div class="publicacion">
+                    <h2>Título 1</h2>
+                    <p>Área: Área 1</p>
+                    <p>Sueldo: Sueldo 1</p>
+                    <p>Modalidad: Presencial</p>
+                    <p>Ubicación: Ubicación 1</p>
+                    <p>Horario: Horario 1</p>
+                    <p>Descripción: Descripción 1</p>
+                    <p>Postulados: n</p>
+                    <div class="botones-publicacion">
+                      <button class="boton-modificar" onclick="abrirVentanaEmergente(0)">Modificar</button>
+                      <button class="boton-eliminar">Eliminar</button>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id="ventanaEmergente" class="ventana-emergente">
+        <div class="contenido-ventana">
+          <h2>Editar Publicación</h2>
+          <form onsubmit="guardarCambios(event)">
+            <input type="hidden" id="indice" value="">
+            <label>Título:</label>
+            <input type="text" id="titulo" required>
+            <label>Área:</label>
+            <input type="text" id="area" required>
+            <label>Sueldo:</label>
+            <input type="text" id="sueldo" required>
+            <label>Modalidad:</label>
+            <input type="text" id="modalidad" required>
+            <label>Ubicación:</label>
+            <input type="text" id="ubicacion" required>
+            <label>Horario:</label>
+            <input type="text" id="horario" required>
+            <label>Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+            <div class="botones-ventana">
+              <button type="submit">Guardar</button>
+              <button type="button" onclick="cerrarVentanaEmergente()">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+  
