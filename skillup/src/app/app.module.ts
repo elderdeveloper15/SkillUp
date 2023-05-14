@@ -16,6 +16,8 @@ import { CrearpublicacionTComponent } from './crearpublicacion-t/crearpublicacio
 import { CrearpublicacionCComponent } from './crearpublicacion-c/crearpublicacion-c.component';
 import { VerficarempresasAComponent } from './verficarempresas-a/verficarempresas-a.component';
 import { AdministrarpublicacionesAComponent } from './administrarpublicaciones-a/administrarpublicaciones-a.component';
+import { AdministrarpublicacionesTComponent } from './administrarpublicaciones-t/administrarpublicaciones-t.component';
+import { AdministrarpublicacionesCComponent } from './administrarpublicaciones-c/administrarpublicaciones-c.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdministrarpublicacionesAComponent } from './administrarpublicaciones-a
     CrearpublicacionTComponent,
     CrearpublicacionCComponent,
     VerficarempresasAComponent,
-    AdministrarpublicacionesAComponent
+    AdministrarpublicacionesAComponent,
+    AdministrarpublicacionesTComponent,
+    AdministrarpublicacionesCComponent
   ],
   imports: [
     BrowserModule,
