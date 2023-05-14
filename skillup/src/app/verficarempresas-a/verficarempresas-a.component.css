@@ -1,0 +1,264 @@
+ 
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        
+      }
+    /*BARRA SUPERIOR*/
+      .grid {
+        display: grid;
+        grid-template-rows: auto 1fr; /* Cambia a dos filas, la primera con altura automática */
+        align-content: start;
+        height: 100%;
+      }
+    
+    /* Style the header with a grey background and some padding */
+    .header {
+      overflow: hidden;
+      background-color: #F2B477;
+      padding: 20px 10px;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+    
+    /* Style the header links */
+    .header a {
+      float: left;
+      color: #434343;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 4px;
+      text-transform: none;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    
+    /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+    .header a.logo {
+      font-size: 50px;
+      font-weight: bold;
+      color: FFFFFF;
+      font-weight: 900;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+    }
+    
+    /* Change the color of up */
+    .header a.logo .up {
+      color: #1C748C;
+    }
+    
+    /* Change the background color on mouse-over */
+    .header a:not(.logo):hover {
+      color: #1C748C;
+    }
+    .header-right {
+      float: right;
+    }   
+    
+    .admin-text {
+      color: #FFFFFF;
+      font-size: 12px;
+      margin-left:70px;
+    }
+    
+    .white-box {
+      background-color: white;
+      grid-row: 2; /* Ocupa la segunda fila */
+      grid-column: 1 / -1; /* Ocupa todas las columnas */
+      flex-grow: 1;
+      height:100%;
+      overflow: auto;
+    }
+
+    .grid2 {
+        display: grid;
+        grid-template-rows: auto 1fr; /* Cambia a dos filas, la primera con altura automática */
+        align-content: start;
+      }
+    
+    .row1 {
+      text-align:center;
+      padding: 50px;
+      color: #1C748C;
+      font-family:helvetica;
+      font-weight:bolder;
+      font-size:20;
+      background-color: #E6F4F8;
+    }
+    
+    .row2 {
+      border-right: 1px solid black; /* Borde derecho de 1px de grosor y color negro */
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      flex-grow: 1; /* Ocupa el espacio restante verticalmente */
+      display: flex; /* Utilizar Flexbox */
+      justify-content: center; /* Alinear contenido horizontalmente en el centro */
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .row2 .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px; /* Asegúrate de especificar un valor en píxeles, por ejemplo, margin-bottom: 10px; */
+    }
+    
+    .row2 .search-bar input[type="text"] {
+      width:50vw;
+      padding: 8px;
+      border-radius: 60px;
+      border: none;
+      margin-right: 6px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+      background-color:#E6F4F8;
+    }
+    
+    .row2 .search-bar button[type="submit"] {
+      margin-top:40px;
+      margin-bottom: 40px;
+      padding: 8px 12px;
+      border-radius: 60px;
+      background-color: #1C748C;
+      color: white;
+      border: none;
+    }
+
+    .empresa {
+      /* Estilos personalizados para la clase 'publicacion' */
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+
+    .empresas-container {
+        flex-grow: 1;
+        width: 60%;
+        min-width: 400px;
+        align-items:center;
+    }
+
+    .boton-activar {
+      background-color: #1C748C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* Alinear los botones en la esquina inferior derecha */
+    .botones-empresa {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .row2 .navigation-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+/* Estilos para la ventana emergente */
+.contenido-ventana form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.contenido-ventana label {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #434343;
+  text-align: left;
+}
+
+.ventana-emergente {
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 9999;
+}
+
+.contenido-ventana {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F5FAFC;;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px; /* Ajusta el ancho según tus necesidades */
+}
+
+.botones-ventana {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.botones-ventana button {
+  display: inline-block;
+  background-color: #1C748C;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.ventana-emergente input,
+.ventana-emergente select,
+.ventana-emergente textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: #E6F4F8;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+
+    ::-webkit-scrollbar {
+        background-color:transparent;
+    }
+
+    /* Estilo del cilindro de la barra de desplazamiento */
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #2222;
+        /* color del cilindro */
+        border-radius: 10px;
+        height: 50px;
+    }
+    @media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+    margin-left:none;
+  }
+  .header-right {
+    float: none;
+  } 
+   .element-3 {
+     grid-template-rows: auto 1fr;
+  }
+}

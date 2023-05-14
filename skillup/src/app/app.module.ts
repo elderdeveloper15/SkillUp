@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { RegistroempresaComponent } from './registroempresa/registroempresa.component';
 import { RegistroestudianteComponent } from './registroestudiante/registroestudiante.component';
@@ -15,14 +14,12 @@ import { InicioestudiantesCComponent } from './inicioestudiantes-c/inicioestudia
 import { CrearpublicacionTComponent } from './crearpublicacion-t/crearpublicacion-t.component';
 import { CrearpublicacionCComponent } from './crearpublicacion-c/crearpublicacion-c.component';
 import { VerficarempresasAComponent } from './verficarempresas-a/verficarempresas-a.component';
-import { AdministrarpublicacionesAComponent } from './administrarpublicaciones-a/administrarpublicaciones-a.component';
 import { AdministrarpublicacionesTComponent } from './administrarpublicaciones-t/administrarpublicaciones-t.component';
 import { AdministrarpublicacionesCComponent } from './administrarpublicaciones-c/administrarpublicaciones-c.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     IniciosesionComponent,
     RegistroempresaComponent,
     RegistroestudianteComponent,
@@ -34,7 +31,6 @@ import { AdministrarpublicacionesCComponent } from './administrarpublicaciones-c
     CrearpublicacionTComponent,
     CrearpublicacionCComponent,
     VerficarempresasAComponent,
-    AdministrarpublicacionesAComponent,
     AdministrarpublicacionesTComponent,
     AdministrarpublicacionesCComponent
   ],
