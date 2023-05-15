@@ -4,23 +4,19 @@
       <link rel="stylesheet" type="text/css" href="registroestudiante.component.css">
     </head>
     <body style="background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed; overflow: auto;"></body>
-    <header>
-        <div class="logo" role="banner">
-    
-            <span class="skill">Skill</span>
-            <span class="up">Up</span></div>
-        <nav>
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">SOBRE NOSOTROS</a></li>
-                <li><a href="#">NUESTRO PROYECTO</a></li>
-            </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar...">
-            <button><i class="fa fa-search"></i></button>
+<grid>
+    <div class="header">
+        <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+        <div class="header-right">
+            <a rel="noopener" href="../app.component.html">Inicio</a>
+          <a href="#sn">Sobre Nosotros</a>
+          <a href="#about">Nuestro proyecto</a>
+          <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+            <button type="submit">Buscar</button>
+          </div>
         </div>
-    </header>
+      </div>
     </div>
     <div class="titulo-container">
       <h1>Comencemos</h1>
@@ -39,8 +35,8 @@
                     <div class="grid-item-2">
                         <div class="grid-item 2 button">
                             <div class="button-container">
-                                <button>Empresa</button>
-                            </div>
+                                <a class="a" rel="noopener" href="../registroempresa/registroempresa.component.html">Empresa</a> 
+                            </div>                          
                         </div>
                     </div>
                     <div class="grid-item-3">
@@ -60,18 +56,18 @@
                             </form>
                         </div>
                     </div>
-    <div class="grid-item-4">
-        <label for="profile-picture" class="profile-picture-label">
-            <div class="profile-picture">
-                <img id="profile-picture-img" src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de.jpg?ver=6" alt="Foto de perfil" alt="Foto de perfil">
-            </div>
-        </label>
-        <input type="file" id="profile-picture" name="profile-picture" accept=".png, .jpg, .jpeg" style="display: none;">        
-    </div>
-    <script src="registroestudiante.component.js"></script>
-   
+                    <div class="grid-item-4">
+                        <label for="profile-picture" class="profile-picture-label">
+                            <div class="profile-picture">
+                                <img id="profile-picture-img" src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de.jpg?ver=6" alt="Foto de perfil" alt="Foto de perfil">
+                            </div>
+                        </label>
+                        <input type="file" id="profile-picture" name="profile-picture" accept=".png, .jpg, .jpeg" style="display: none;">        
+                    </div>
+                    <script src="registroestudiante.component.js"></script>
                 </div>
             </div>
         </div>
         <input type="submit" value="Registrarse">
     </div>
+</grid>

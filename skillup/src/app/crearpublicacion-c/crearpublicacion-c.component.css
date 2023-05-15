@@ -30,7 +30,7 @@ body {
   border: none;
   margin-right: 6px;
   margin-bottom:auto;
-  margin-top:auto;
+  margin-top:10px;
 }
 
 .header .search-bar button[type="submit"] {
@@ -139,16 +139,22 @@ body {
     border-bottom: 4px solid #F2B477;
 }
 
-.element-1 button:hover {
-    background-color:antiquewhite;
+.element-1 a:hover {
+  background-color: antiquewhite;
 }
 
-  .element-1 .btn-1 {
-    background-color: white;
-    color: #F2B477;
-    border-bottom: NONE;
-    margin-bottom:4px;
-  }
+.element-1 a {
+  padding: 10px;
+  font-size: 15px;
+  font-family:helvetica;
+  font-weight:bolder;
+  border: none;
+  color:  #F2B477;
+  cursor: pointer;
+  letter-spacing: 4px;
+  text-align: center;
+  text-decoration: none;
+}
 
 /* element-2===TÍTULO PUBLICACIÓN */
 
