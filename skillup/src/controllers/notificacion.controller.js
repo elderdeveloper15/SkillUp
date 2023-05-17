@@ -51,15 +51,71 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Notificacion.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Estudiante with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Estudiante with id=" + id
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Notificacion.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Notificacion was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Notificacion with id=${id}. Maybe Notificacion was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Notificacion with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Notificacion.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Notificacion was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Notificacion with id=${id}. Maybe Notificacion was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Notificacion with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {

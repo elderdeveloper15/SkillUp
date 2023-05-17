@@ -53,15 +53,71 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Estudiante.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Estudiante with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Estudiante with id=" + id
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Estudiante.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Estudiante was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Estudiante with id=${id}. Maybe Estudiante was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Estudiante with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Estudiante.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Estudiante was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Estudiante with id=${id}. Maybe Estudiante was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Estudiante with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {

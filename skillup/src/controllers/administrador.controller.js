@@ -48,15 +48,71 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Administrador.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Administrador with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Administrador with id=" + id
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Administrador.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Administrador was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Administrador with id=${id}. Maybe Administrador was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Administrador with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Administrador.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Administrador was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Administrador with id=${id}. Maybe Administrador was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Administrador with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {

@@ -52,15 +52,71 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Empresa with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Empresa with id=" + id
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Empresa was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Empresa with id=${id}. Maybe Empresa was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Empresa with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Empresa was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Empresa with id=${id}. Maybe Empresa was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Empresa with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {

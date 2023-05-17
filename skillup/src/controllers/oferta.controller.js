@@ -54,15 +54,71 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Oferta.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find Oferta with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Oferta with id=" + id
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Oferta.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Oferta was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Oferta with id=${id}. Maybe Oferta was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Oferta with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Oferta.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Oferta was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Oferta with id=${id}. Maybe Oferta was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Oferta with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {
