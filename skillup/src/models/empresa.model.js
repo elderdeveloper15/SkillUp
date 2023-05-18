@@ -21,6 +21,9 @@ module.exports = (sequelize, Sequelize) => {
       },
       telefono: {
         type: Sequelize.INTEGER
+      },
+      verificada: {
+        type: Sequelize.BOOLEAN 
       }
     },{
       tableName: 'empresa',

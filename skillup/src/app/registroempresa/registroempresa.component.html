@@ -5,23 +5,20 @@
 </head>
     <body style="overflow: hidden; background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed; overflow: auto;"></body>
     <header>
-        <div class="logo" role="banner">
-    
-            <span class="skill">Skill</span>
-            <span class="up">Up</span></div>
-        <nav>
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">SOBRE NOSOTROS</a></li>
-                <li><a href="#">NUESTRO PROYECTO</a></li>
-            </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar...">
-            <button><i class="fa fa-search"></i></button>
+        <div class="header">
+            <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+            <div class="header-right">
+                <a rel="noopener" href="../app.component.html">Inicio</a>
+              <a href="#sn">Sobre Nosotros</a>
+              <a href="#about">Nuestro proyecto</a>
+              <div class="search-bar">
+                <input type="text" placeholder="Buscar">
+                <button type="submit">Buscar</button>
+                </div> 
+            </div>
         </div>
     </header>
-    </div>
+    
     <div class="titulo-container">
       <h1>Comencemos</h1>
     </div>  
@@ -30,15 +27,17 @@
         <div class="grid-container">
             <div class="element-1">
                 <div class="grid-2-cols">
-                    <div class="grid-item-1">
-                        <div class="grid-item 1 button">
-                            <div class="button-container">
-                                <button>Estudiante</button>
+                    <div class="grid-item-2">
+                        <div class="grid-item-2">
+                            <div class="grid-item 2 button">
+                                <div class="button-container">
+                                    <a class="a" rel="noopener" href="../registroestudiante/registroestudiante.component.html">Estudiante</a> 
+                                </div>                          
                             </div>
                         </div>
                     </div>
-                    <div class="grid-item-2">
-                        <div class="grid-item 2 button">
+                    <div class="grid-item-1">
+                        <div class="grid-item 1 button">
                             <div class="button-container">
                                 <button>Empresa</button>
                             </div>

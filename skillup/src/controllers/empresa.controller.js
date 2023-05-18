@@ -19,7 +19,8 @@ exports.create = (req, res) => {
     nombre: req.body.nombre,
     domicilio: req.body.domicilio,
     correo: req.body.correo,
-    telefono: req.body.telefono
+    telefono: req.body.telefono,
+    verificada: req.body.estatus ? req.body.estatus : false
   };
 
   // Save in the database
@@ -52,15 +53,84 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).send({
+          message: `Cannot find x Empresa with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error xretrieving Empresa with id=" + id
+      });
+    });
+};
+
+exports.findNotVerified = (req,res) =>{
+  Empresa.findAll({ where: { verificada: false } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Empresa."
+      });
+    });
 };
 
 exports.update = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Empresa was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Empresa with id=${id}. Maybe Empresa was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error updating Empresa with id=" + id
+      });
+    });
 };
 
 exports.delete = (req, res) => {
-  
+  const id = req.params.id;
+
+  Empresa.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Empresa was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete Empresa with id=${id}. Maybe Empresa was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete Empresa with id=" + id
+      });
+    });
 };
 
 exports.deleteAll = (req, res) => {
