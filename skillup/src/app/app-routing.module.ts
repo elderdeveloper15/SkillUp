@@ -42,7 +42,7 @@ const routes: Routes = [
     component: InicioestudiantesCComponent
   },
   {
-    path: 'inciioestudiantes-t',
+    path: 'inicioestudiantes-t',
     component: InicioestudiantesTComponent
   },
   {
