@@ -118,6 +118,18 @@ exports.delete = (req, res) => {
     });
 };
 
+exports.lastID = async (req, res) => {
+  try {
+    const resultado = await Notificacion.max('id');
+    const ultimoID = parseInt(resultado, 10); // Convertir a número base 10
+    res.status(200).json({ ultimoID });
+  } catch (error) {
+    // Manejar el error según tus necesidades
+    console.error('Error al obtener el último ID:', error);
+    res.status(500).json({ error: 'Error al obtener el último ID' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };

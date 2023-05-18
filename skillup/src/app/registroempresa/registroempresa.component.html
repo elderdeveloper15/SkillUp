@@ -47,15 +47,15 @@
                         <div class="form-container">
                             <form>
                                 <label for="nombre">Nombre de la empresa:</label>
-                                <input type="name" id="nombre" name="nombre">
+                                <input type="name" id="nombre" name="nombre" [(ngModel)]="nombre">
                                 <label for="correo">Correo:</label>
-                                <input type="email" id="correo" name="correo">
+                                <input type="email" id="correo" name="correo" [(ngModel)]="correo">
                                 <label for="contraseña">Contraseña:</label>
-                                <input type="password" id="contraseña" name="contraseña">
+                                <input type="password" id="contraseña" name="contraseña" [(ngModel)]="password">
                                 <label for="RFC">RFC:</label>
-                                <input type="rfc" id="RFC" name="RFC">
+                                <input type="rfc" id="RFC" name="RFC" [(ngModel)]="rfc">
                                 <label for="direccion">Dirección:</label>
-                                <input type="address" id="direccion" name="direccion">
+                                <input type="address" id="direccion" name="direccion" [(ngModel)]="domicilio">
                             </form>
                         </div>
                     </div>
@@ -72,5 +72,6 @@
             </div>
         </div>
         <input type="submit" value="Registrarse">
+        <button (click)="createStudent()">Registrarte!</button>
     </div>
     </div>

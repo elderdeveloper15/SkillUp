@@ -11,6 +11,9 @@ module.exports = app => {
   
     // Retrieve all published empresa
     router.get("/published", empresa.findAllPublished);
+
+    //Retrieve the last ID of all the enterprises
+    router.get("/lastid",empresa.lastID);
   
     //Retrieve a single Empresa with verifacada equals false
     router.get("/verificados",empresa.findNotVerified);

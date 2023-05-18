@@ -11,6 +11,9 @@ module.exports = app => {
   
     // Retrieve all published curso
     router.get("/published", curso.findAllPublished);
+
+    //Retrieve the last ID of all the students
+    router.get("/lastid",curso.lastID);
   
     // Retrieve a single Tutorial with id
     router.get("/:id", curso.findOne);

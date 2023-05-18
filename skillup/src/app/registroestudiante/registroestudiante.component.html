@@ -41,16 +41,16 @@
                         <div class="form-container">
                             <form>
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre">
+                                <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
                                 <label for="apellidos">Apellidos:</label>
-                                <input type="text" id="apellidos" name="apellidos">
+                                <input type="text" id="apellidos" name="apellidos" [(ngModel)]="apellidos">
                                 <label for="correo">Correo:</label>
-                                <input type="email" id="correo" name="correo">
+                                <input type="email" id="correo" name="correo" [(ngModel)]="correo">
                                 <label for="contraseña">Contraseña:</label>
-                                <input type="password" id="contraseña" name="contraseña">
-                                <label for="curriculum">Currículum (PDF):</label>
-                                <label for="curriculum" class="custom-file-upload">Seleccionar archivo</label>
-                                <input type="file" id="curriculum" name="curriculum" accept=".pdf">
+                                <input type="password" id="contraseña" name="contraseña" [(ngModel)]="password">
+                                <label for="cv">Currículum (PDF):</label>
+                                <label for="cv" class="custom-file-upload">Seleccionar archivo</label>
+                                <input type="file" id="cv" name="cv" accept=".pdf" (change)="onFileSelected($event)">
                             </form>
                         </div>
                     </div>
@@ -67,4 +67,5 @@
             </div>
         </div>
         <input type="submit" value="Registrarse">
+        <button (click)="createStudent()">Registrarte!</button>
     </div>

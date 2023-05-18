@@ -11,6 +11,9 @@ module.exports = app => {
   
     // Retrieve all published notificacion
     router.get("/published", notificacion.findAllPublished);
+
+    //Retrieve the last ID of all the students
+    router.get("/lastid",notificacion.lastID);
   
     // Retrieve a single Tutorial with id
     router.get("/:id", notificacion.findOne);
