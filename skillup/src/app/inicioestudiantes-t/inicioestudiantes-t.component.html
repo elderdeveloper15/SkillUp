@@ -1,1 +1,305 @@
-<p>inicioestudiantes-t works!</p>
+<style>
+    body {
+        background-color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .grind-layout {
+        height: 700px;
+        display: grid;
+        grid-template-areas: 'encabezado' 'tipo' 'carrera' 'publicaciones';
+        grid-template-rows: 15% 5% 10% auto;
+        background-color: #ffffff;
+    }
+/**************** Encabezado *************************/
+    .header {
+        grid-area: encabezado;
+        background-color: #F2B477;
+        overflow: hidden;
+        background-color: F2B477;
+        padding: 20px 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+ 
+    .header .search-bar {
+      float:left;
+      margin-bottom:auto;
+      margin-top:10px;
+    }
+     
+    .header .search-bar input[type="text"] {
+      padding: 8px;
+      border-radius: 60px;
+      border: none;
+      margin-right: 6px;
+      margin-bottom:auto;
+      margin-top:auto;
+    }
+     
+    .header .search-bar button[type="submit"] {
+      padding: 8px 12px;
+      border-radius: 60px;
+      background-color: #1C748C;
+      color: white;
+      border: none;
+    }
+     
+    /* Style the header links */
+    .header a {
+      float: left;
+      color: #434343;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 30px;
+      border-radius: 4px;
+      text-transform: none;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      font-weight: 900;
+    }
+     
+    /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+    .header a.logo {
+      font-size: 50px;
+      font-weight: bold;
+      color: FFFFFF;
+      font-weight: 900;
+      font-family: Helvetica;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+    }
+     
+     
+    /* Change the color of up */
+    .header a.logo .up {
+      color: #1C748C;
+    }
+     
+    /* Change the background color on mouse-over */
+    .header a:not(.logo):hover {
+      color: #1C748C;
+    }
+     
+    /* Style the active/current link */
+    .header a.active { 
+      color: #1C748C;
+    }
+     
+    /* Float the link section to the right */
+    .header-right {
+      float: right;
+    }
+     
+    /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+        margin-left:none;
+      }
+     
+      .header-right {
+        float: none;
+        margin-left:4%;
+      } 
+    }
+    
+/**************************************************************/
+
+
+/************* Tipo de publicacion ********************/
+
+    .tipopublicacion {
+        grid-area: tipo;
+        background-color: #ffffff;
+        display: grid;
+        grid-template-areas: 'trabajo curso';
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        text-align: center;
+
+    }
+    
+    .trab{
+        grid-area: trabajo;
+        color: #F2B477;
+        margin-top:10px;
+        font-size: 12px;
+        border-bottom:5px solid #F2B477;
+        background-color: #FFEEDE;
+    }
+    
+    
+    .curs {
+        grid-area: trabajo;
+        margin-top:10px;
+        font-size: 12px;
+        grid-area: curso;
+    }
+    .curs a{
+        color: #F2B477;
+        text-decoration: none;
+    }
+    .curs a:hover{
+        color: #1C748C;
+    }
+    
+    
+
+/**************************************************************/
+
+/************* Elegir carrera ********************/
+    .carrera {
+        grid-area: carrera;
+        background-color: white;
+        display: grid;
+        grid-template-areas: 'etiquta elegir';
+        grid-template-columns: 80% 20%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .carrera label {
+        text-align: start;
+        grid-area: etiquta;
+    }
+    
+    .elegir{
+        grid-area: elegir;
+    }
+    
+/**************************************************************/
+
+
+/************* Publicaciones ********************/
+    .publicaciones {
+        grid-area: publicaciones;
+        background-color: #ffffff;
+        display: grid;
+        grid-template-rows: minmax(100px, auto);
+        
+    }
+    
+    .publi{
+        background-color: #efefef;
+        width: 100%;
+        height: 250px;
+        display: grid;
+        grid-template-areas: 'nombre imge';
+        grid-template-columns: 60% 40%;
+        border:10px solid white;
+        text-align: start;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .publi h2{
+        margin-left: 20px;
+    }
+    
+    .publi label{
+        margin-left: 20px;
+        font-size: 14px;
+    }
+    
+    .publi button{
+        width: 150px;
+        height: 25px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        background-color: #1C748C;
+        border: none;
+        color: #ffffff;
+    }
+    
+    .publi a:hover{
+        color: #F2B477;
+    }
+    
+    .publi img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+  
+    
+/**************************************************************/
+
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/34c9ac171c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="grind-layout">
+        <div class="header">
+          <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+          <div class="header-right">
+            <a class="active" href="#inicio">Inicio</a>
+            <a href="#sn">Sobre Nosotros</a>
+            <a href="#about">Nuestro proyecto</a>
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar">
+              <button type="submit">Buscar</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tipopublicacion">
+            <div class="trab">TRABAJO</div>
+            <div class="curs">
+                <a href="#curso">CURSO</a>
+            </div>
+        </div>
+        <div class="carrera">
+            <label for="mi-select">Te ofrecemos, los mejores cursos. No olvides selección tu carrera de trabajo para tener una busqueda más personalizada.
+            </label>
+            <select id="mi-select" name="mi-select">
+                <option value="opcion1">Selecciona tu carrera</option>
+                <option value="opcion2">Opción 2</option>
+                <option value="opcion3">Opción 3</option>
+            </select>
+        </div>
+            
+        <div class="publicaciones">
+            <div class="publi">
+                <div class="info">
+                    <h2>Nombre del trabajo</h2> 
+                    <label>Información de contacto</label><br>
+                    <button>Postularse</button>
+                    <a herf=""> Mas información ></a>
+                </div>
+                
+                <div class="info">
+                    <img src="" alt="Mi imagen">
+                </div>
+                
+            </div>
+            
+            <div class="publi">
+                <div class="info">
+                    <h2>Nombre del trabajo</h2> 
+                    <label>Información de contacto</label><br>
+                    <button>Postularse</button>
+                    <a herf=""> Mas información ></a>
+                </div>
+                
+                <div class="info">
+                    <img src="" alt="Mi imagen">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
