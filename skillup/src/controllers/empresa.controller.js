@@ -19,7 +19,8 @@ exports.create = (req, res) => {
     nombre: req.body.nombre,
     domicilio: req.body.domicilio,
     correo: req.body.correo,
-    telefono: req.body.telefono
+    telefono: req.body.telefono,
+    verificada: req.body.estatus ? req.body.estatus : false
   };
 
   // Save in the database
@@ -60,13 +61,26 @@ exports.findOne = (req, res) => {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find Empresa with id=${id}.`
+          message: `Cannot find x Empresa with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Empresa with id=" + id
+        message: "Error xretrieving Empresa with id=" + id
+      });
+    });
+};
+
+exports.findNotVerified = (req,res) =>{
+  Empresa.findAll({ where: { verificada: false } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Empresa."
       });
     });
 };

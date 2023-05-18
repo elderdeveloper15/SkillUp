@@ -3,7 +3,7 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
+    // Create a new empresa
     router.post("/", empresa.create);
   
     // Retrieve all empresa
@@ -12,16 +12,19 @@ module.exports = app => {
     // Retrieve all published empresa
     router.get("/published", empresa.findAllPublished);
   
-    // Retrieve a single Tutorial with id
+    //Retrieve a single Empresa with verifacada equals false
+    router.get("/verificados",empresa.findNotVerified);
+
+    // Retrieve a single empresa with id
     router.get("/:id", empresa.findOne);
-  
-    // Update a Tutorial with id
+
+    // Update a empresa with id
     router.put("/:id", empresa.update);
   
-    // Delete a Tutorial with id
+    // Delete a empresa with id
     router.delete("/:id", empresa.delete);
   
-    // Create a new Tutorial
+    // Create a new empresa
     router.delete("/", empresa.deleteAll);
   
     app.use('/api/empresa', router);
