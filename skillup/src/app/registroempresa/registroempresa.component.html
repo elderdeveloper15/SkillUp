@@ -3,7 +3,6 @@
     <script src="registroempresa.component.js"></script>
       <link rel="stylesheet" type="text/css" href="registroempresa.component.css">
 </head>
-    <body style="overflow: hidden; background-image: linear-gradient(to bottom, #F2B477, #1C748C);background-attachment: fixed; overflow: auto;"></body>
     <header>
         <div class="header">
             <a href="#default" class="logo">Skill<span class="up">Up</span></a>
@@ -47,30 +46,30 @@
                         <div class="form-container">
                             <form>
                                 <label for="nombre">Nombre de la empresa:</label>
-                                <input type="name" id="nombre" name="nombre">
+                                <input type="name" id="nombre" name="nombre" [(ngModel)]="nombre">
                                 <label for="correo">Correo:</label>
-                                <input type="email" id="correo" name="correo">
+                                <input type="email" id="correo" name="correo" [(ngModel)]="correo">
                                 <label for="contraseña">Contraseña:</label>
-                                <input type="password" id="contraseña" name="contraseña">
+                                <input type="password" id="contraseña" name="contraseña" [(ngModel)]="password">
                                 <label for="RFC">RFC:</label>
-                                <input type="rfc" id="RFC" name="RFC">
-                                <label for="direccion">Dirección:</label>
-                                <input type="address" id="direccion" name="direccion">
+                                <input type="rfc" id="RFC" name="RFC" [(ngModel)]="rfc" required>
+                                <label for="direccion">Domicilio:</label>
+                                <input type="address" id="direccion" name="direccion" [(ngModel)]="domicilio">
                             </form>
                         </div>
                     </div>
-     <div class="grid-item-4">
-        <label for="profile-picture" class="profile-picture-label">
-            <div class="profile-picture">
-                <img id="profile-picture-img" src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-gris.png" alt="Foto de perfil">
-            </div>
-        </label>
-        <input type="file" id="profile-picture" name="profile-picture" accept=".png, .jpg, .jpeg" style="display: none;">        
-    </div>
-    <script src="registroempresa.component.js"></script>
+                    <div class="grid-item-4">
+                        <label for="profile-picture" class="profile-picture-label">
+                            <div class="profile-picture">
+                                <img id="profile-picture-img" src="https://icones.pro/wp-content/uploads/2021/07/icone-d-affaires-et-d-entrepreneurs-gris.png" alt="Foto de perfil">
+                            </div>
+                        </label>
+                        <input type="file" id="profile-picture" name="profile-picture" accept=".png, .jpg, .jpeg" style="display: none;">        
+                    </div>
+                    <script src="registroempresa.component.js"></script>
                 </div>
             </div>
         </div>
-        <input type="submit" value="Registrarse">
+        <button class="registrate" (click)="createStudent()">Regístrate!</button>
     </div>
     </div>

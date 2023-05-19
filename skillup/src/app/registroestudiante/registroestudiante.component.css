@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: auto; /* Agrega un scroll vertical a la página completa */
+  background-image: linear-gradient(to bottom, #F2B477, #1C748C);
+  background-attachment: fixed;
 }
 
 .grid {
@@ -247,7 +249,7 @@ body {
 
 /*BOTON REGISTRARSE*/
 
-.white-box input[type="submit"] {
+.registrate {
   width: 150px;
   height: 60px;
   padding: 0;
@@ -256,9 +258,10 @@ body {
   background-color: #F2B477;
   font-size: 16px;
   color: #ffffff;
-  border-radius: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 ::-webkit-scrollbar {

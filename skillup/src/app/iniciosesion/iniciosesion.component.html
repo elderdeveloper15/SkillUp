@@ -270,18 +270,18 @@
   <h1>Iniciar Sesión</h1>
  
   <form>
-    <input type="radio" name="opcion" value="estudianteU" id="estudianteU">
+    <input type="radio" name="opcion" value="estudiante" id="estudianteU" [(ngModel)]="quien">
     <label style="margin-right: 50px;" for="estudianteU">Usuario estudiante </label> 
-    <input type="radio" name="opcion" value="empresaU" id="empresaU">
+    <input type="radio" name="opcion" value="empresa" id="empresaU" [(ngModel)]="quien">
     <label for="empresaU">Usuario empresa</label><br>
   </form>
 
   <div class="cajatexto">
-    <label for="nombre">EMAL</label>
-    <input type="text" id="nombre" name="nombre">
+    <label for="nombre">EMAIL</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="correo">
     <label for="nombre">CONTRASEÑA</label>
-    <input type="text" id="nombre" name="nombre">
-    <button>Iniciar Sesion</button>
+    <input type="password" type="text" id="nombre" name="nombre" [(ngModel)]="password">
+    <button (click)="iniciarSesion()" >Iniciar Sesion</button>
 
     <p>¿No tienes una cuenta?<br>
     <a href="/skillup/src/app/landing/landing.component.html">Registrate aquí</a>

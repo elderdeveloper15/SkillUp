@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'skillup';
+  
+  constructor(private http:HttpClient,private router: Router){}
+
+
+  irInicioSesion(){
+    this.router.navigate(['/iniciosesion'])
+  }
+
+  irRegistroEmpresa(){
+    this.router.navigate(['/registroempresa'])
+  }
+
+  irRegistroEstudiante(){
+    this.router.navigate(['/registroestudiante'])
+  }
+
 }

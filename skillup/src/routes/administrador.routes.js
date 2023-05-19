@@ -11,6 +11,9 @@ module.exports = app => {
   
     // Retrieve all published administrador
     router.get("/published", administrador.findAllPublished);
+
+    //Check if the account exists by email, password and verificada
+    router.get("/account",administrador.checkAccount);
   
     // Retrieve a single Tutorial with id
     router.get("/:id", administrador.findOne);

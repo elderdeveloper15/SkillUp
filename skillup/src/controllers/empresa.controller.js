@@ -133,6 +133,45 @@ exports.delete = (req, res) => {
     });
 };
 
+exports.lastID = async (req, res) => {
+  try {
+    const resultado = await Empresa.max('id');
+    const ultimoID = parseInt(resultado, 10); // Convertir a número base 10
+    res.status(200).json({ ultimoID });
+  } catch (error) {
+    // Manejar el error según tus necesidades
+    console.error('Error al obtener el último ID:', error);
+    res.status(500).json({ error: 'Error al obtener el último ID' });
+  }
+};
+
+exports.checkAccount = async (req, res) => {
+  const { correo, password, verificada } = req.query;
+
+  if (correo && password && verificada) {
+    try {
+      const resultado = await Empresa.findOne({
+        where: {
+          correo: correo,
+          password: password,
+          verificada: verificada
+        }
+      });
+
+      if (resultado) {
+        res.status(200).json(true);
+      } else {
+        res.status(200).json(false);
+      }
+    } catch (error) {
+      console.error('Error al verificar las credenciales:', error);
+      res.status(500).json({ error: 'Error al verificar las credenciales' });
+    }
+  } else {
+    res.status(400).json({ error: 'Los parámetros correo y/o password faltan o son inválidos' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };

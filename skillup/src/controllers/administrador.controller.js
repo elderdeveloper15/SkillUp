@@ -115,6 +115,32 @@ exports.delete = (req, res) => {
     });
 };
 
+exports.checkAccount = async (req, res) => {
+  const { usuario, password } = req.query;
+
+  if (usuario && password) {
+    try {
+      const resultado = await Administrador.findOne({
+        where: {
+          usuario: usuario,
+          password: password
+        }
+      });
+
+      if (resultado) {
+        res.status(200).json(true);
+      } else {
+        res.status(200).json(false);
+      }
+    } catch (error) {
+      console.error('Error al verificar las credenciales:', error);
+      res.status(500).json({ error: 'Error al verificar las credenciales' });
+    }
+  } else {
+    res.status(400).json({ error: 'Los parámetros correo y/o password faltan o son inválidos' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };
