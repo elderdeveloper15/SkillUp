@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfilestudiante',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfilestudiante.component.css']
 })
 export class PerfilestudianteComponent {
+
+  constructor(private http:HttpClient, private router: Router){}
 
 }
