@@ -27,6 +27,15 @@ module.exports = (sequelize, Sequelize) => {
       },
       horario: {
         type: Sequelize.STRING
+      },
+      id_empresa:{
+        type: Sequelize.INTEGER
+      },
+      ubicacion:{
+        type: Sequelize.STRING
+      },
+      titulo:{
+        type: Sequelize.STRING
       }
     },{
       tableName: 'curso',

@@ -21,7 +21,10 @@ exports.create = (req, res) => {
     area: req.body.area,
     estatus: req.body.estatus ? req.body.estatus : false,
     date: req.body.date,
-    horario: req.body.horario
+    horario: req.body.horario,
+    id_empresa: req.body.id_empresa,
+    ubicacion: req.body.ubicacion,
+    titulo: req.body.titulo
   };
 
   // Save in the database

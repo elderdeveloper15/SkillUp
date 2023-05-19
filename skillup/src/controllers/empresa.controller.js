@@ -159,7 +159,7 @@ exports.checkAccount = async (req, res) => {
       });
 
       if (resultado) {
-        res.status(200).json(true);
+        res.status(200).json({verificada: true, id: resultado.id });
       } else {
         res.status(200).json(false);
       }

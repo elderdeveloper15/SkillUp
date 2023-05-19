@@ -20,10 +20,10 @@
       <div class="grid-container">
            <div class="element-1">
                 <button class="btn-1">EMPLEO</button>
-                <a class="btn-2" rel="noopener" href="../crearpublicacion-c/crearpublicacion-c.component.html">CURSO</a>
+                <a class="btn-2" rel="noopener" href="/crearpublicacion-c">CURSO</a>
             </div>
             <div class="element-2"> 
-                <input type="text" placeholder="Título de la publicación...">            
+                <input type="text" placeholder="Título de la publicación..." [(ngModel)]="titulo">            
             </div>
              <div class="element-3">
              </div>
@@ -31,31 +31,37 @@
           <div class="grid-2-cols">
             <div class="grid-item-1">
                 <form>
-                    <label for="area">ÁREA:</label>
-                    <input type="text" id="area" name="area" required>
-                    <label for="sueldo">SUELDO:</label>
-                    <input type="text" id="sueldo" name="sueldo" required>
-                    <label for="modalidad">MODALIDAD:</label>
-                    <select id="modalidad" name="modalidad" required>
-                      <option value="presencial">Presencial</option>
-                      <option value="virtual">Virtual</option>
-                      <option value="mixta">Mixta</option>
-                    </select>
-                    <label for="ubicacion">UBICACIÓN:</label>
-                    <input type="text" id="ubicacion" name="ubicacion">
-                    <label for="horario">HORARIO:</label>
-                    <input type="text" id="horario" name="horario" required>
+                  <label for="area">ÁREA:</label>
+                  <input type="text" id="area" name="area" [(ngModel)]="area">
+                  <label for="sueldo">SUELDO:</label>
+                  <input type="text" id="sueldo" name="sueldo" [(ngModel)]="sueldo">
+                  <label for="modalidad">MODALIDAD:</label>
+                  <select id="modalidad" name="modalidad" [(ngModel)]="modalidad">
+                    <option value="presencial">Presencial</option>
+                    <option value="virtual">Virtual</option>
+                    <option value="mixta">Mixta</option>
+                  </select>
+                  <label for="ubicacion">UBICACIÓN:</label>
+                  <input type="text" id="ubicacion" name="ubicacion" [(ngModel)]="ubicacion">
+                  <label for="horario">HORARIO:</label>
+                  <input type="text" id="horario" name="horario" [(ngModel)]="horario">
                  </form>
             </div>
-            <div class="grid-item-2">  
+            <div class="grid-item-1">  
                  <form>
-                    <textarea rows="4" cols="50" placeholder="Descripción general..."></textarea>
+                  <label for="publico">PUBLICO:</label>
+                  <input type="text" id="publico" name="publico" placeholder="mayores de 18 años" [(ngModel)]="publico">
+                  <label for="duracion">DURACION (DIAS):</label>
+                  <input type="text" id="duracion" name="duracion" placeholder="9" [(ngModel)]="duracion">
+                  <label for="fecha">FECHA DE INICIO:</label>
+                  <input type="date" id="fecha" name="fecha" [(ngModel)]="date">
+                  <textarea rows="4" cols="50" placeholder="Descripción general..."></textarea>
                  </form>
             </div>
           </div>
         </div>
         <div class="element-5">
-            <input type="submit" value="Publicar">
+          <button (click)="publicar()"  type="submit" value="Publicar"> </button>
         </div>
       </div>
     </div>

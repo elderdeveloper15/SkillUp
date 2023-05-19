@@ -12,6 +12,7 @@ export class IniciosesionComponent {
   correo : string = "";
   password : string = "";
   quien : string = "";
+  id : number = 0;
 
   constructor(private http:HttpClient,private router: Router){}
 
@@ -34,16 +35,16 @@ export class IniciosesionComponent {
 
     if(this.quien == "estudiante"){
       this.http.get<any>('http://localhost:8080/api/estudiante/account',bodyEstudiante).subscribe(data => {
-        if (data == true){
-          this.router.navigate(['/inciioestudiantes-t'])
+        if (data.verificada == true){
+          this.router.navigate(['/inciioestudiantes-t'],{queryParams:{correo:this.correo,password:this.password,id: data.id}})
         }
       });
 
     }
     else if (this.quien == "empresa"){
       this.http.get<any>('http://localhost:8080/api/empresa/account',bodyEmpresa).subscribe(data => {
-        if (data == true){
-          this.router.navigate(['/inicioempresa'])
+        if (data.verificada == true){
+          this.router.navigate(['/inicioempresa'],{queryParams:{correo:this.correo,password:this.password,id: data.id}})
         }
       });
     }

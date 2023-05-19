@@ -234,16 +234,20 @@
               <input type="text" placeholder="Buscar">
               <button type="submit">Buscar</button>
             </div>
+            
           </div>
         </div>
         
         <div class="tipopublicacion">
+            <br><br>
+            <a>Bienvenido: {{ correo }}</a>
+            <br>
             <div class="trab">
-                <button>Oferta de trabajo</button>
+                <button (click)="crearPublicacionT()">Oferta de trabajo</button>
             </div>
             <div class="crear">Crear una nueva publicación</div>
             <div class="curs">
-                 <button>Curso</button>
+                 <button (click)="crearPublicacionC()">Curso</button>
             </div>
         </div>
             
