@@ -145,6 +145,33 @@ exports.lastID = async (req, res) => {
   }
 };
 
+exports.checkAccount = async (req, res) => {
+  const { correo, password, verificada } = req.query;
+
+  if (correo && password && verificada) {
+    try {
+      const resultado = await Empresa.findOne({
+        where: {
+          correo: correo,
+          password: password,
+          verificada: verificada
+        }
+      });
+
+      if (resultado) {
+        res.status(200).json(true);
+      } else {
+        res.status(200).json(false);
+      }
+    } catch (error) {
+      console.error('Error al verificar las credenciales:', error);
+      res.status(500).json({ error: 'Error al verificar las credenciales' });
+    }
+  } else {
+    res.status(400).json({ error: 'Los parámetros correo y/o password faltan o son inválidos' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };

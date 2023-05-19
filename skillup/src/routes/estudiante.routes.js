@@ -14,6 +14,9 @@ module.exports = app => {
 
     //Retrieve the last ID of all the students
     router.get("/lastid",estudiante.lastID);
+
+    //Check if the account exists by email and password
+    router.get("/account",estudiante.checkAccount);
   
     // Retrieve a single Tutorial with id
     router.get("/:id", estudiante.findOne);

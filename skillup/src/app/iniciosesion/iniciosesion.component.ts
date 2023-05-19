@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-iniciosesion',
@@ -6,5 +9,46 @@ import { Component } from '@angular/core';
   styleUrls: ['./iniciosesion.component.css']
 })
 export class IniciosesionComponent {
+  correo : string = "";
+  password : string = "";
+  quien : string = "";
+
+  constructor(private http:HttpClient,private router: Router){}
+
+  iniciarSesion(){
+
+    const bodyEstudiante = { params:
+      {
+        "correo": this.correo,
+        "password": this.password 
+      }
+    };
+
+    const bodyEmpresa = { params:
+      {
+        "correo": this.correo,
+        "password": this.password,
+        "verificada": true
+      }
+    };
+
+    if(this.quien == "estudiante"){
+      this.http.get<any>('http://localhost:8080/api/estudiante/account',bodyEstudiante).subscribe(data => {
+        if (data == true){
+          this.router.navigate(['/inciioestudiantes-t'])
+        }
+      });
+
+    }
+    else if (this.quien == "empresa"){
+      this.http.get<any>('http://localhost:8080/api/empresa/account',bodyEmpresa).subscribe(data => {
+        if (data == true){
+          this.router.navigate(['/inicioempresa'])
+        }
+      });
+    }
+  }
+
+
 
 }

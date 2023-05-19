@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { RegistroempresaComponent } from './registroempresa/registroempresa.component';
@@ -41,7 +42,8 @@ import { IniciosesionAdminComponent } from './iniciosesion-admin/iniciosesion-ad
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

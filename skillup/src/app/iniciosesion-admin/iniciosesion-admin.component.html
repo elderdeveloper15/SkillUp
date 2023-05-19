@@ -14,10 +14,10 @@
 <div class="inicio">
     <div class="login-box">
         <h2>Inicio de sesión</h2>
-        <form action="../administrarpublicaciones-c/administrarpublicaciones-c.component.html" method="POST">
-            <input type="email" placeholder="Correo" required>
-            <input type="password" placeholder="Contraseña" required>
-            <button type="submit">Iniciar sesión</button>
+        <form>
+            <input type="text" id="usuario" name="usuario" [(ngModel)]="usuario">
+            <input type="password" type="password" id="password" name="password" [(ngModel)]="password">
+            <button type="submit" (click)="iniciarSesion()" >Iniciar sesión</button>
         </form>
     </div>
 </div>

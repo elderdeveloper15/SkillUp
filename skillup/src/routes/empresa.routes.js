@@ -18,6 +18,9 @@ module.exports = app => {
     //Retrieve a single Empresa with verifacada equals false
     router.get("/verificados",empresa.findNotVerified);
 
+    //Check if the account exists by email, password and verificada
+    router.get("/account",empresa.checkAccount);
+
     // Retrieve a single empresa with id
     router.get("/:id", empresa.findOne);
 
