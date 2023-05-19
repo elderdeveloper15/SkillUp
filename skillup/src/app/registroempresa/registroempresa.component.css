@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: auto; /* Agrega un scroll vertical a la página completa */
+  background-image: linear-gradient(to bottom, #F2B477, #1C748C);
+  background-attachment: fixed;
 }
 
 .grid {
@@ -250,7 +252,7 @@ body {
   
   /*BOTON REGISTRARSE*/
   
-  .white-box input[type="submit"] {
+  .registrate {
     width: 150px;
     height: 60px;
     padding: 0;
