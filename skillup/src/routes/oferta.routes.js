@@ -12,6 +12,12 @@ module.exports = app => {
     // Retrieve all published oferta
     router.get("/published", oferta.findAllPublished);
 
+    //Retrive all cursos by id_empresa or title
+    router.get("/search",oferta.findAllByIdOrTitle);
+
+    //Retrieve all cursos by area
+    router.get("/area",oferta.findAllByArea)
+
     //Retrieve the last ID of all the students
     router.get("/lastid",oferta.lastID);
   

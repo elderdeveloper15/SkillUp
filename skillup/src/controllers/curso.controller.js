@@ -1,4 +1,5 @@
 const db = require("../models");
+const {Sequelize } = require('sequelize');
 const Curso = db.curso;
 const Op = db.Sequelize.Op;
 
@@ -135,6 +136,50 @@ exports.lastID = async (req, res) => {
     res.status(500).json({ error: 'Error al obtener el último ID' });
   }
 };
+
+exports.findAllByIdOrTitle = async (req,res) =>{
+  const { id_empresa, titulo } = req.query;
+  let whereCondition = {};
+  if (id_empresa && titulo) {
+    whereCondition = {
+      [Op.and]: [
+        { id_empresa: id_empresa },
+        { titulo: { [Op.like]: `%${titulo}%` } }
+      ]
+    };
+  } else if (id_empresa) {
+    whereCondition = { id_empresa: id_empresa };
+  } else if (titulo) {
+    whereCondition = { titulo: { [Op.like]: `%${titulo}%` } };
+  }
+  try {
+    const elementos = await Curso.findAll({
+      where: whereCondition
+    });
+    res.status(200).json(elementos);
+  } catch (error) {
+    console.error('Error al obtener los elementos por ID o título:', error);
+    res.status(500).json({ error: 'Error al obtener los elementos por ID o título' });
+  }
+};
+
+exports.findAllByArea = async (req,res) =>{
+  const { area } = req.query;
+  try {
+    const elementos = await Curso.findAll({
+      where: Sequelize.where(
+        Sequelize.fn('LOWER', Sequelize.col('area')),
+        'ILIKE',
+        `%${area.toLowerCase()}%`
+      )
+    });
+
+    res.status(200).json(elementos);
+  } catch (error) {
+    console.error('Error al obtener los elementos por nombre:', error);
+    res.status(500).json({ error: 'Error al obtener los elementos por nombre' });
+  }
+}
 
 exports.deleteAll = (req, res) => {
   
