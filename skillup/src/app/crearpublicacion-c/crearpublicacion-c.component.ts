@@ -35,6 +35,10 @@ export class CrearpublicacionCComponent {
     return this.http.get<any>('http://localhost:8080/api/curso/lastid');
   }
 
+  irATrabajos(){
+    this.router.navigate(['/crearpublicacion-t'],{queryParams:{id: this.id_empresa}})
+  }
+
   publicar(){
     this.getLastId().subscribe(data => {
       this.id = data.ultimoID;

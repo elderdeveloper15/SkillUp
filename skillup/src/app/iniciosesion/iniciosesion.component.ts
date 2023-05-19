@@ -36,7 +36,7 @@ export class IniciosesionComponent {
     if(this.quien == "estudiante"){
       this.http.get<any>('http://localhost:8080/api/estudiante/account',bodyEstudiante).subscribe(data => {
         if (data.verificada == true){
-          this.router.navigate(['/inciioestudiantes-t'],{queryParams:{correo:this.correo,password:this.password,id: data.id}})
+          this.router.navigate(['/inicioestudiantes-t'],{queryParams:{correo:this.correo,password:this.password,id: data.id}})
         }
       });
 

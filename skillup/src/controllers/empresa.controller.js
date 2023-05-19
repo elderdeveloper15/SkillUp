@@ -53,7 +53,7 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  const id = req.query.id;
+  const id = req.params.id;
 
   Empresa.findByPk(id)
     .then(data => {

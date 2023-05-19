@@ -34,6 +34,8 @@ export class InicioempresaComponent {
     this.router.navigate(['/crearpublicacion-t'],{queryParams:{id: this.id}})
   }
 
-  
+  administrarPublicaciones(){
+    this.router.navigate(['/administrarpublicaciones-t'],{queryParams:{id: this.id}})
+  }
 
 }

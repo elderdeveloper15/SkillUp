@@ -31,6 +31,10 @@ export class CrearpublicacionTComponent {
     });
   }
 
+  irACursos(){
+    this.router.navigate(['/crearpublicacion-c'],{queryParams:{id: this.id_empresa}})
+  }
+
   getLastId(){
     return this.http.get<any>('http://localhost:8080/api/oferta/lastid');
   }
