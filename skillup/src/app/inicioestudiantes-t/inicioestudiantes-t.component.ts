@@ -3,6 +3,21 @@ import { ActivatedRoute } from '@angular/router';
 import {HttpClient} from '@angular/common/http'
 import { Router } from '@angular/router';
 
+interface Publicacion {
+  id: number;
+  area: string;
+  sueldo: number;
+  modalidad: string;
+  ubicacion: string;
+  horario: string;
+  publico: string;
+  date: Date;
+  duracion: number;
+  estatus: boolean;
+  titulo: string;
+  descripcion:string;
+}
+
 @Component({
   selector: 'app-inicioestudiantes-t',
   templateUrl: './inicioestudiantes-t.component.html',
@@ -14,6 +29,11 @@ export class InicioestudiantesTComponent {
   password : string = "";
   id: number = 0;
 
+  busqueda: string = "";
+  area_seleccionada: string = "";
+
+  publicaciones: Publicacion[] = [];
+
   constructor(private route: ActivatedRoute,private http:HttpClient,private router: Router) { }
 
   ngOnInit(){
@@ -22,6 +42,11 @@ export class InicioestudiantesTComponent {
       this.password = params['password'];
       this.id = params['id'];
     });
+
+    this.http.get<any>('http://localhost:8080/api/oferta').subscribe(data => {     
+        this.publicaciones = data;     
+      });
+
   }
 
   administrarPerfil(){
@@ -31,4 +56,27 @@ export class InicioestudiantesTComponent {
   irCursos(){
     this.router.navigate(['/inicioestudiantes-c'], {queryParams:{correo: this.correo, password:this.password, id: this.id}})
   }
+
+  buscar(){
+    const body = { params:
+      {
+        "titulo": this.busqueda
+      }
+    };
+    this.http.get<any>('http://localhost:8080/api/oferta/search', body).subscribe(data => {     
+        this.publicaciones = data;     
+      });
+  }
+
+  filtrar(){
+    const body = { params:
+      {
+        "area": this.area_seleccionada
+      }
+    };
+    this.http.get<any>('http://localhost:8080/api/oferta/area', body).subscribe(data => {     
+        this.publicaciones = data;     
+      });
+  }
+
 }

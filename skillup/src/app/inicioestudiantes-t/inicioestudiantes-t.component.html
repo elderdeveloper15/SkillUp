@@ -260,46 +260,47 @@
         <div class="tipopublicacion">
             <div class="trab">TRABAJO</div>
             <div class="curs">
-                <a href="#curso">CURSO</a>
+                <a (click)="irCursos()">CURSO</a>
             </div>
         </div>
         <div class="carrera">
             <label for="mi-select">Te ofrecemos, los mejores cursos. No olvides selección tu carrera de trabajo para tener una busqueda más personalizada.
             </label>
-            <select id="mi-select" name="mi-select">
-                <option value="opcion1">Selecciona tu carrera</option>
-                <option value="opcion2">Opción 2</option>
-                <option value="opcion3">Opción 3</option>
+            <select id="mi-select" name="mi-select" [(ngModel)]="area_seleccionada" (change)="filtrar()">
+                <option value="">Selecciona tu carrera</option>
+                <option value="Matematicas">Matematicas</option>
+                <option value="Fisica">Fisica</option>
+                <option value="Quimica">Quimica</option>
+                <option value="Ingenieria">Ingenieria</option>
+                <option value="Medicina">Medicina</option>
+                <option value="Biologia">Biologia</option>
+                <option value="Mecanica">Mecanica</option>
+                <option value="Computacion">Computacion</option>
+                <option value="Musica">Musica</option>
+                <option value="Literatura">Literatura</option>
             </select>
         </div>
             
-        <div class="publicaciones">
-            <div class="publi">
-                <div class="info">
-                    <h2>Nombre del trabajo</h2> 
-                    <label>Información de contacto</label><br>
-                    <button>Postularse</button>
-                    <a herf=""> Mas información ></a>
-                </div>
-                
-                <div class="info">
-                    <img src="" alt="Mi imagen">
-                </div>
-                
+        <div class="row2">
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar" [(ngModel)]="busqueda">
+              <button type="submit" (click)="buscar()">Buscar</button>
             </div>
-            
-            <div class="publi">
-                <div class="info">
-                    <h2>Nombre del trabajo</h2> 
-                    <label>Información de contacto</label><br>
-                    <button>Postularse</button>
-                    <a herf=""> Mas información ></a>
+            <div class="publicaciones-container">
+              <div class="publicacion" *ngFor="let publicacion of publicaciones">
+                <h2>{{ publicacion.titulo }}</h2>
+                <p>Área: {{ publicacion.area }}</p>
+                <p>Sueldo: {{ publicacion.sueldo }}</p>
+                <p>Modalidad: {{ publicacion.modalidad }}</p>
+                <p>Ubicación: {{ publicacion.ubicacion }}</p>
+                <p>Fecha: {{ publicacion.date }}</p>
+                <p>Horario: {{ publicacion.horario }}</p>
+                <p>Publico: {{ publicacion.publico }}</p>
+                <p>Descripción: {{ publicacion.descripcion }}</p>
+                <div class="botones-publicacion">
+                  <button class="boton-modificar" >Mandar notificación!</button>
                 </div>
-                
-                <div class="info">
-                    <img src="" alt="Mi imagen">
-                </div>
-                
+              </div>  
             </div>
         </div>
     </div>
