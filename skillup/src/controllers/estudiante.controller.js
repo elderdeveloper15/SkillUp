@@ -53,11 +53,15 @@ exports.findAll = (req, res) => {
 };
 
 exports.findOne = (req, res) => {
-  const id = req.query.id;
+  const id = req.params.id;
 
-  Estudiante.findByPk(id)
+  Estudiante.findAll({
+    where: {
+      id: id
+    }
+  })
     .then(data => {
-      if (data) {
+      if (data.length > 0) {
         res.send(data);
       } else {
         res.status(404).send({

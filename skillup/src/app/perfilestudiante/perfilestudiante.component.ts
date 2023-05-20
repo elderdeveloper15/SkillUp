@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 interface estudiante{
+  id: number;
   nombre: string;
   apellidos: string;
   correo: string;
@@ -29,16 +30,15 @@ export class PerfilestudianteComponent {
     this.route.queryParams.subscribe(params =>{
       this.id = params['id'];
     });
+    
+    let id_final: string = this.id.toString();
 
-    const body = { params:
-      {
-        "id_estudiante": this.id
-      }
-    };
+    const url='http://localhost:8080/api/estudiante/' + id_final;
 
-    this.http.get<any>('http://localhost:8080/api/estudiante', body).subscribe(data => {
+    this.http.get<any>(url).subscribe(data => {
       this.estudiantes = data;
+      console.log(this.estudiantes);
     });
   }
-
+  
 }

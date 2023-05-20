@@ -336,27 +336,18 @@
             
             <div class="imagenperfil"></div>
             
-            <div class="nomestudiante" *ngFor="let empresa of empresas"> 
+            <div *ngFor="let empresa of empresas; let i = index">
+              <div *ngIf="i === 1" class="nomestudiante"> 
               <p> {{ empresa.nombre }} </p>
-            </div>
-            
-            <div class="infogeneral">
-                <div *ngFor="let empresa of empresas">
+              </div>    
+              <div *ngIf="i === 1" class="infogeneral">
                     <i class="fas fa-envelope"></i>
                     <p> {{ empresa.correo }} </p>
-                </div>
-                <div *ngFor="let empresa of empresas">
                     <i class="fas fa-phone"></i>
                     <p> {{ empresa.telefono }} </p>
-                </div>
-                <div *ngFor="let empresa of empresas">
                     <i class="fa-solid fa-location-dot"></i>
                     <p> {{ empresa.domicilio }} </p>  
-                </div>
-            </div>
-            
-            <div class="descrip" *ngFor="let empresa of empresas">
-              <p> {{ empresa.descripcion }} </p>
+              </div>
             </div>
         
         </div>

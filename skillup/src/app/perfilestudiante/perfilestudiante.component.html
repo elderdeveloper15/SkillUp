@@ -224,29 +224,26 @@
             <div class="imagenperfil"></div>
             
             <div class="nomestudiante" *ngFor="let estudiante of estudiantes">
-              <p> {{ estudiante.nombre + " " + estudiante.apellidos}} </p>
-            </div>
+              
+              <p> {{ estudiante.nombre + " " + estudiante.apellidos }} </p>
+              
             
-            <div class="infogeneral">
-                <div *ngFor="let estudiante of estudiantes">
+              <div  class="infogeneral">
                     <i class="fas fa-envelope"></i>
                     <p> {{ estudiante.correo }} </p>
-                </div>
-                <div *ngFor="let estudiante of estudiantes">
                     <i class="fas fa-graduation-cap"></i>
                     <p> {{ estudiante.escolaridad }} </p>   
-                </div>
-            </div>
+              </div>
             
-            <div class="curriculum"  *ngFor="let estudiante of estudiantes">
-                <a href={{ estudiante.cv }} download>
-  <i class="fas fa-file-pdf"></i>Curriculum Vitae
-</a>
+              <div  class="curriculum" >
+                <i class="fas fa-file-pdf"></i>Curriculum Vitae
+              </div>
             </div>
-        
         </div>
         <div class="descripgeneral" *ngFor="let estudiante of estudiantes">
+          
             <p> {{ estudiante.habilidades }} </p>
+          
         </div>
     </div>
 </body>

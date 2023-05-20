@@ -39,7 +39,16 @@ export class PerfilempresaComponent {
       this.empresas = data;
     });
   }
+  
+  /*irCrearPublicacion(){
+    this.router.navigate()
+  }
+  irAdministrarPubC(){
 
+  }
+  irAdministrarPubT(){
+
+  }*/
  
   
 }
