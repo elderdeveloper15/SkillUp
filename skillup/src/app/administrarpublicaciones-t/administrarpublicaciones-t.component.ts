@@ -27,6 +27,7 @@ interface Publicacion {
 
 export class AdministrarpublicacionesTComponent {
   id_empresa: number = 0;
+  busqueda: string = "";
 
   publicaciones: Publicacion[] = [];
 
@@ -50,6 +51,18 @@ export class AdministrarpublicacionesTComponent {
 
   irACursos(){
     this.router.navigate(['/administrarpublicaciones-c'],{queryParams:{id: this.id_empresa}})
+  }
+
+  buscar(){
+    const body = { params:
+      {
+        "id_empresa": this.id_empresa,
+        "titulo": this.busqueda
+      }
+    };
+    this.http.get<any>('http://localhost:8080/api/oferta/search', body).subscribe(data => {     
+        this.publicaciones = data;     
+      });
   }
 
 }
