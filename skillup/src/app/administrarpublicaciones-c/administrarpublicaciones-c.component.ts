@@ -63,4 +63,14 @@ export class AdministrarpublicacionesCComponent {
       });
   }
 
+  eliminar(id_eliminar: number){
+    let id_final: string = id_eliminar.toString(); 
+    const url = 'http://localhost:8080/api/curso/'+id_final;
+    this.http.delete(url).subscribe();
+  }
+
+  modificar(id_modificar:number){
+    this.router.navigate(['/modificarpubli-c'],{queryParams:{id_empresa: this.id_empresa,id_modificar:id_modificar}})
+  }
+
 }

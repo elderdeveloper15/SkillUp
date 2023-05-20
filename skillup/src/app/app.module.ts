@@ -19,6 +19,8 @@ import { VerficarempresasAComponent } from './verficarempresas-a/verficarempresa
 import { AdministrarpublicacionesTComponent } from './administrarpublicaciones-t/administrarpublicaciones-t.component';
 import { AdministrarpublicacionesCComponent } from './administrarpublicaciones-c/administrarpublicaciones-c.component';
 import { IniciosesionAdminComponent } from './iniciosesion-admin/iniciosesion-admin.component';
+import { ModificarpubliTComponent } from './modificarpubli-t/modificarpubli-t.component';
+import { ModificarpubliCComponent } from './modificarpubli-c/modificarpubli-c.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { IniciosesionAdminComponent } from './iniciosesion-admin/iniciosesion-ad
     VerficarempresasAComponent,
     AdministrarpublicacionesTComponent,
     AdministrarpublicacionesCComponent,
-    IniciosesionAdminComponent
+    IniciosesionAdminComponent,
+    ModificarpubliTComponent,
+    ModificarpubliCComponent
   ],
   imports: [
     BrowserModule,

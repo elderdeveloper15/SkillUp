@@ -61,19 +61,23 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Curso.findByPk(id)
+  Curso.findAll({
+    where: {
+      id: id
+    }
+  })
     .then(data => {
-      if (data) {
+      if (data.length > 0) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find Curso with id=${id}.`
+          message: `Cannot find Estudiante with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Curso with id=" + id
+        message: "Error retrieving Estudiante with id=" + id
       });
     });
 };

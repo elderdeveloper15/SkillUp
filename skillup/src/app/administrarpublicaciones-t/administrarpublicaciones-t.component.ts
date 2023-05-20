@@ -71,9 +71,8 @@ export class AdministrarpublicacionesTComponent {
     this.http.delete(url).subscribe();
   }
 
-  modificar(){
-    console.log("modificando");
-
+  modificar(id_modificar:number){
+    this.router.navigate(['/modificarpubli-t'],{queryParams:{id_empresa: this.id_empresa,id_modificar:id_modificar}})
   }
 
 }

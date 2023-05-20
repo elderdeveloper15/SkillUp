@@ -40,8 +40,8 @@
                     <p>Descripción: {{ publicacion.descripcion }}</p>
                     <p>Estatus: {{ publicacion.estatus }}</p>
                     <div class="botones-publicacion">
-                      <button class="boton-modificar" onclick="abrirVentanaEmergente(0)">Modificar</button>
-                      <button class="boton-eliminar">Eliminar</button>
+                      <button class="boton-modificar" (click)="modificar(publicacion.id)">Modificar</button>
+                      <button class="boton-eliminar" (click)="eliminar(publicacion.id)">Eliminar</button>
                     </div>
                   </div>  
                 </div>

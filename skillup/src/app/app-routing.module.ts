@@ -14,7 +14,8 @@ import { PerfilestudianteComponent } from './perfilestudiante/perfilestudiante.c
 import { RegistroempresaComponent } from './registroempresa/registroempresa.component';
 import { RegistroestudianteComponent } from './registroestudiante/registroestudiante.component';
 import { VerficarempresasAComponent } from './verficarempresas-a/verficarempresas-a.component';
-
+import { ModificarpubliCComponent } from './modificarpubli-c/modificarpubli-c.component';
+import { ModificarpubliTComponent } from './modificarpubli-t/modificarpubli-t.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,14 @@ const routes: Routes = [
   {
     path: 'iniciosesion-admin',
     component: IniciosesionAdminComponent
+  },
+  {
+    path: 'modificarpubli-t',
+    component: ModificarpubliTComponent
+  },
+  {
+    path: 'modificarpubli-c',
+    component: ModificarpubliCComponent
   },
   {
     path: 'perfilempresa',
