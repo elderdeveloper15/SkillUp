@@ -336,11 +336,11 @@
             
             <div class="imagenperfil"></div>
             
-            <div *ngFor="let empresa of empresas; let i = index">
-              <div *ngIf="i === 1" class="nomestudiante"> 
+            <div *ngFor="let empresa of empresas">
+              <div class="nomestudiante"> 
               <p> {{ empresa.nombre }} </p>
               </div>    
-              <div *ngIf="i === 1" class="infogeneral">
+              <div class="infogeneral">
                     <i class="fas fa-envelope"></i>
                     <p> {{ empresa.correo }} </p>
                     <i class="fas fa-phone"></i>
