@@ -17,6 +17,9 @@ module.exports = app => {
 
     //Check if the account exists by email and password
     router.get("/account",estudiante.checkAccount);
+
+    //Download CV from estudiante
+    router.get("/download/:id",estudiante.download);
   
     // Retrieve a single Tutorial with id
     router.get("/:id", estudiante.findOne);

@@ -1,4 +1,6 @@
 const db = require("../models");
+const fs = require('fs');
+const path = require('path');
 const Estudiante = db.estudiante;
 const Op = db.Sequelize.Op;
 
@@ -160,6 +162,43 @@ exports.checkAccount = async (req, res) => {
   } else {
     res.status(400).json({ error: 'Los parámetros correo y/o password faltan o son inválidos' });
   }
+};
+
+exports.download = async (req, res) => {
+  const estudianteId = req.params.id;
+
+  Estudiante.findByPk(estudianteId).then(estudiante => {
+    if (!estudiante) {
+      return res.status(404).send('Estudiante no encontrado');
+    }
+  
+    const cvBuffer = estudiante.cv; // Obtener el Buffer desde la columna 'cv' del estudiante
+    const cvFilePath = cvBuffer.toString(); // Convertir el Buffer a una cadena de texto
+  
+    // Verificar si la ruta del archivo es válida
+    if (!fs.existsSync(cvFilePath)) {
+      console.error('Archivo no encontrado:', cvFilePath);
+      return res.status(404).send('El archivo no pudo ser encontrado');
+    }
+  
+    // Descargar el archivo PDF
+    res.download(cvFilePath, 'cv.pdf', (err) => {
+      if (err) {
+        console.error('Error al descargar el CV:', err);
+        return res.status(500).send('Error al descargar el CV');
+      }
+  
+      // Eliminar el archivo temporal después de la descarga
+      fs.unlink(cvFilePath, (err) => {
+        if (err) {
+          console.error('Error al eliminar el archivo temporal:', err);
+        }
+      });
+    });
+  }).catch(err => {
+    console.error('Error al obtener el estudiante:', err);
+    return res.status(500).send('Error al obtener el estudiante');
+  });
 };
 
 exports.deleteAll = (req, res) => {
