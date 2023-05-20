@@ -28,27 +28,14 @@ export class PerfilempresaComponent {
     this.route.queryParams.subscribe(params =>{
       this.id = params['id'];
     });
+    
+    let id_final: string = this.id.toString();
 
-    const body = { params:
-      {
-        "id_empresa": this.id
-      }
-    };
+    const url='http://localhost:8080/api/empresa/' + id_final;
 
-    this.http.get<any>('http://localhost:8080/api/empresa', body).subscribe(data => {
+    this.http.get<any>(url).subscribe(data => {
       this.empresas = data;
     });
   }
-  
-  /*irCrearPublicacion(){
-    this.router.navigate()
-  }
-  irAdministrarPubC(){
-
-  }
-  irAdministrarPubT(){
-
-  }*/
- 
   
 }
