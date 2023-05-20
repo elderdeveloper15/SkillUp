@@ -36,6 +36,9 @@ module.exports = (sequelize, Sequelize) => {
       },
       titulo:{
         type: Sequelize.STRING
+      },
+      descripcion:{
+        type: Sequelize.STRING
       }
     },{
       tableName: 'oferta',

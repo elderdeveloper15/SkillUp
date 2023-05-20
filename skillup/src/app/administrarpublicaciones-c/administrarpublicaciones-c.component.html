@@ -18,7 +18,7 @@
             <div class="grid-item row1">
               <!-- Contenido de la primera fila dividida en dos columnas -->
               <div class="grid">
-                <a class="grid-trabajos-1" href="../administrarpublicaciones-t/administrarpublicaciones-t.component.html">OFERTAS TRABAJO</a>
+                <a class="grid-trabajos-1" (click)="irATrabajos()">OFERTAS TRABAJO</a>
                 <div class="grid-cursos-2">CURSOS</div>
               </div>
             </div>
@@ -28,15 +28,17 @@
                   <button type="submit">Buscar</button>
                 </div>
                 <div class="publicaciones-container">
-                  <div class="publicacion">
-                    <h2>Título 1</h2>
-                    <p>Área: Área 1</p>
-                    <p>Costo: Costo 1</p>
-                    <p>Modalidad: Presencial</p>
-                    <p>Ubicación: Ubicación 1</p>
-                    <p>Horario: Horario 1</p>
-                    <p>Descripción: Descripción 1</p>
-                    <p>Postulados: n</p>
+                  <div class="publicacion" *ngFor="let publicacion of publicaciones">
+                    <h2>{{ publicacion.titulo }}</h2>
+                    <p>Área: {{ publicacion.area }}</p>
+                    <p>Costo: {{ publicacion.costo }}</p>
+                    <p>Modalidad: {{ publicacion.modalidad }}</p>
+                    <p>Ubicación: {{ publicacion.ubicacion }}</p>
+                    <p>Fecha: {{ publicacion.date }}</p>
+                    <p>Horario: {{ publicacion.horario }}</p>
+                    <p>Publico: {{ publicacion.publico }}</p>
+                    <p>Descripción: {{ publicacion.descripcion }}</p>
+                    <p>Estatus: {{ publicacion.estatus }}</p>
                     <div class="botones-publicacion">
                       <button class="boton-modificar" onclick="abrirVentanaEmergente(0)">Modificar</button>
                       <button class="boton-eliminar">Eliminar</button>

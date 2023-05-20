@@ -22,6 +22,7 @@ export class CrearpublicacionCComponent {
   duracion: number = 0;
   estatus: boolean = true;
   titulo: string = "";
+  descripcion: string = "";
 
   constructor(private route: ActivatedRoute,private http:HttpClient,private router: Router) { }
 
@@ -56,7 +57,8 @@ export class CrearpublicacionCComponent {
         "horario":this.horario,
         "id_empresa":this.id_empresa,
         "ubicacion": this.ubicacion,
-        "titulo":this.titulo
+        "titulo":this.titulo,
+        "descripcion":this.descripcion
       };
 
       this.http.post<any>('http://localhost:8080/api/curso', body).subscribe(data => {
