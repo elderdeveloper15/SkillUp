@@ -336,27 +336,27 @@
             
             <div class="imagenperfil"></div>
             
-            <div class="nomestudiante">
-                 <span>Nombre de la empresa</span>
+            <div class="nomestudiante" *ngFor="let empresa of empresas"> 
+              <p> {{ empresa.nombre }} </p>
             </div>
             
             <div class="infogeneral">
-                <div>
+                <div *ngFor="let empresa of empresas">
                     <i class="fas fa-envelope"></i>
-                    <span>empresa@correo.com</span>
+                    <p> {{ empresa.correo }} </p>
                 </div>
-                <div>
+                <div *ngFor="let empresa of empresas">
                     <i class="fas fa-phone"></i>
-                    <span>0000000000</span>
+                    <p> {{ empresa.telefono }} </p>
                 </div>
-                <div>
+                <div *ngFor="let empresa of empresas">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>Dirección</span>    
+                    <p> {{ empresa.domicilio }} </p>  
                 </div>
             </div>
             
-            <div class="descrip">
-                <span>Descripción general de la empresa</span>
+            <div class="descrip" *ngFor="let empresa of empresas">
+              <p> {{ empresa.descripcion }} </p>
             </div>
         
         </div>
