@@ -352,27 +352,27 @@
         
         </div>
         <div class="descripgeneral">
-            <div class = "crear">
-               <h1>Crear una nueva publicación</h1>
-               <button class=b1 onclick="window.location.href='';">Oferta de trabajo</button>
-               <button class=b2 onclick="window.location.href='';">Curso disponible</button>
-            </div>
-            <div class="publire">
-                <h2>Publicaciones recientes</h2>
-                <div class="carousel">
-                <input type="radio" id="carousel-1" name="carousel[]" checked>
-                <input type="radio" id="carousel-2" name="carousel[]">
-                <input type="radio" id="carousel-3" name="carousel[]">
-                <input type="radio" id="carousel-4" name="carousel[]">
-                
-                <ul>
-                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
-                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
-                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
-                    <li><img src="https://www.chiquipedia.com/imagenes/imagenes-vida.jpg"></li>
-                </ul>
-            </div>
-
+            <form>
+              <p>Editar la informacion</p>
+              <p></p>
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+              <p></p>
+              <label for="telefono">Telefono:</label>
+              <input type="text" id="telefono" name="telefono" [(ngModel)]="telefono">
+              <p></p>
+              <label for="domicilio">Domicilio:</label>
+              <input type="text" id="domicilio" name="domicilio" [(ngModel)]="domicilio">
+              <p></p>
+              <label for="rfc">RFC:</label>
+              <input type="text" id="rfc" name="rfc" [(ngModel)]="rfc">
+              <p></p>
+              <label for="correo">Correo:</label>
+              <input type="text" id="correo" name="correo" [(ngModel)]="correo">
+              <p></p>
+            </form>
+            <div class="element-5">
+              <button (click)="publicar()" type="submit" value="Publicar">Editar</button>
             </div>
         </div>
     </div>
