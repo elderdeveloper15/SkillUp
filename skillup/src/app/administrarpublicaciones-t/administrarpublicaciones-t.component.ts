@@ -65,4 +65,15 @@ export class AdministrarpublicacionesTComponent {
       });
   }
 
+  eliminar(id_eliminar: number){
+    let id_final: string = id_eliminar.toString(); 
+    const url = 'http://localhost:8080/api/oferta/'+id_final;
+    this.http.delete(url).subscribe();
+  }
+
+  modificar(){
+    console.log("modificando");
+
+  }
+
 }
