@@ -230,20 +230,44 @@
             
               <div  class="infogeneral">
                     <i class="fas fa-envelope"></i>
-                    <p> {{ estudiante.correo }} </p>
+                     {{ estudiante.correo }} 
+                     <p></p>
                     <i class="fas fa-graduation-cap"></i>
-                    <p> {{ estudiante.escolaridad }} </p>   
+                    {{ estudiante.escolaridad }}
+                    <p></p>
+                    <p> {{ estudiante.habilidades }} </p>
               </div>
             
               <div  class="curriculum" >
-                <i class="fas fa-file-pdf"></i>Curriculum Vitae
+                <i class="fas fa-file-pdf"></i> Curriculum Vitae
               </div>
             </div>
         </div>
         <div class="descripgeneral" *ngFor="let estudiante of estudiantes">
-          
-            <p> {{ estudiante.habilidades }} </p>
-          
+          <form>
+            <p>Editar la informacion</p>
+            <p></p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+            <p></p>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" [(ngModel)]="apellidos">
+            <p></p>
+            <label for="correo">Correo:</label>
+            <input type="text" id="correo" name="correo" [(ngModel)]="correo">
+            <p></p>
+            <label for="escolaridad">Escolaridad:</label>
+            <input type="text" id="escolaridad" name="escolaridad" [(ngModel)]="escolaridad">
+            <p></p>
+            <label for="habilidades">Habilidades:</label>
+            <input type="text" id="habilidades" name="habilidades" [(ngModel)]="habilidades">
+            <p></p>
+            <label for="cv" class="custom-file-upload">Seleccionar archivo</label>
+            <input type="file" id="cv" name="cv" accept=".pdf" (change)="onFileSelected($event)">
+          </form>
+          <div class="element-5">
+            <button (click)="publicar()" type="submit" value="Publicar">Editar</button>  
+          </div>
         </div>
     </div>
 </body>
