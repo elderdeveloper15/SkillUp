@@ -21,6 +21,7 @@ import { AdministrarpublicacionesCComponent } from './administrarpublicaciones-c
 import { IniciosesionAdminComponent } from './iniciosesion-admin/iniciosesion-admin.component';
 import { ModificarpubliTComponent } from './modificarpubli-t/modificarpubli-t.component';
 import { ModificarpubliCComponent } from './modificarpubli-c/modificarpubli-c.component';
+import { NotificacionesEComponent } from './notificaciones-e/notificaciones-e.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ModificarpubliCComponent } from './modificarpubli-c/modificarpubli-c.co
     AdministrarpublicacionesCComponent,
     IniciosesionAdminComponent,
     ModificarpubliTComponent,
-    ModificarpubliCComponent
+    ModificarpubliCComponent,
+    NotificacionesEComponent
   ],
   imports: [
     BrowserModule,

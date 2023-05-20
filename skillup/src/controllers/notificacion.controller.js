@@ -130,6 +130,35 @@ exports.lastID = async (req, res) => {
   }
 };
 
+exports.findAllByIdOrTitle = async (req,res) =>{
+  const { id_empresa, titulo } = req.query;
+  let whereCondition = {};
+
+  if (id_empresa && titulo) {
+    whereCondition = {
+      [Op.and]: [
+        { id_empresa: id_empresa },
+        { titulo: { [Op.like]: `%${titulo}%` } }
+      ]
+    };
+  } else if (id_empresa) {
+    whereCondition = { id_empresa: id_empresa };
+  } else if (titulo) {
+    whereCondition = { titulo: { [Op.like]: `%${titulo}%` } };
+  }
+
+  try {
+    const elementos = await Notificacion.findAll({
+      where: whereCondition
+    });
+
+    res.status(200).json(elementos);
+  } catch (error) {
+    console.error('Error al obtener los elementos por ID o título:', error);
+    res.status(500).json({ error: 'Error al obtener los elementos por ID o título' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };

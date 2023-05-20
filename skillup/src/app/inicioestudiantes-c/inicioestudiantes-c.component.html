@@ -298,7 +298,7 @@
                 <p>Publico: {{ publicacion.publico }}</p>
                 <p>Descripción: {{ publicacion.descripcion }}</p>
                 <div class="botones-publicacion">
-                  <button class="boton-modificar" >Mandar notificación!</button>
+                  <button class="boton-modificar" (click)="notificar(publicacion.id, publicacion.id_empresa)">Mandar notificación!</button>
                 </div>
               </div>  
             </div>

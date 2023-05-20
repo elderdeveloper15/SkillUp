@@ -16,6 +16,7 @@ import { RegistroestudianteComponent } from './registroestudiante/registroestudi
 import { VerficarempresasAComponent } from './verficarempresas-a/verficarempresas-a.component';
 import { ModificarpubliCComponent } from './modificarpubli-c/modificarpubli-c.component';
 import { ModificarpubliTComponent } from './modificarpubli-t/modificarpubli-t.component';
+import { NotificacionesEComponent } from './notificaciones-e/notificaciones-e.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'modificarpubli-c',
     component: ModificarpubliCComponent
+  },
+  {
+    path: 'notificaciones-e',
+    component: NotificacionesEComponent
   },
   {
     path: 'perfilempresa',

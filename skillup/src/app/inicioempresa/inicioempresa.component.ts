@@ -41,4 +41,8 @@ export class InicioempresaComponent {
   administrarPerfil(){
     this.router.navigate(['/perfilempresa'],{queryParams:{id: this.id}})
   }
+
+  notificaciones(){
+    this.router.navigate(['/notificaciones-e'],{queryParams:{id: this.id}})
+  }
 }

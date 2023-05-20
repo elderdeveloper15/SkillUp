@@ -16,6 +16,7 @@ interface Publicacion {
   estatus: boolean;
   titulo: string;
   descripcion: string;
+  id_empresa: number;
 }
 
 @Component({
@@ -30,6 +31,7 @@ export class InicioestudiantesCComponent {
 
   busqueda: string = "";
   area_seleccionada: string = "";
+  notification_id: number = 0;
 
   publicaciones: Publicacion[] = [];
 
@@ -76,6 +78,30 @@ export class InicioestudiantesCComponent {
     this.http.get<any>('http://localhost:8080/api/curso/area', body).subscribe(data => {     
         this.publicaciones = data;     
       });
+  }
+
+  getLastNotificationId(){
+    return this.http.get<any>('http://localhost:8080/api/notificacion/lastid');
+  }
+
+  notificar(id_notificar: number, id_empresa:number){
+    this.getLastNotificationId().subscribe(data => {
+      this.notification_id = data.ultimoID;
+      console.log(this.notification_id);
+
+      const body = {
+        "id": this.notification_id + 1,
+        "id_empresa": id_empresa,
+        "descripcion": "Estoy interesado!",
+        "id_estudiante": this.id,
+        "id_curso": id_notificar,
+        "id_oferta": null,
+      };
+      this.http.post<any>('http://localhost:8080/api/notificacion', body).subscribe(data => {
+        console.log("ya jalo");
+      });
+
+    });
   }
 
 }

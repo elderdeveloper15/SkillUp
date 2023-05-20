@@ -12,6 +12,9 @@ module.exports = app => {
     // Retrieve all published notificacion
     router.get("/published", notificacion.findAllPublished);
 
+    //Retrive all cursos by id_empresa or title
+    router.get("/search",notificacion.findAllByIdOrTitle);
+
     //Retrieve the last ID of all the students
     router.get("/lastid",notificacion.lastID);
   

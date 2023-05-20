@@ -1,0 +1,12 @@
+<div class="row2">
+    <div class="publicaciones-container">
+      <div class="notificacion" *ngFor="let notificacion of notificaciones">
+        <p>ID Estudiante: {{ notificacion.id_estudiante }}</p>
+        <p>ID Oferta: {{ notificacion.id_oferta }}</p>
+        <p>ID Curso: {{ notificacion.id_curso }}</p>
+        <div class="botones-notificacion">
+          <button class="boton-modificar" (click)="descargarCV(notificacion.id_estudiante)">Descargar CV del Aplicante</button>
+        </div>
+      </div>  
+    </div>
+</div>
