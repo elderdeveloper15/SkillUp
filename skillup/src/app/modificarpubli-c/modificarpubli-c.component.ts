@@ -72,7 +72,7 @@ export class ModificarpubliCComponent implements OnInit {
   publicar(){
     const body = {
       "id": this.id_modificar,
-      "sueldo": this.costo,
+      "costo": this.costo,
       "duracion": this.duracion,
       "modalidad": this.modalidad,
       "publico": this.publico,
