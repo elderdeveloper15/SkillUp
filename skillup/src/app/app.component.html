@@ -24,7 +24,10 @@
     h6 {
       margin: 8px 0;
     }
-    body{background-color: #F2B477;}
+    body{
+      background-color: #F2B477;
+      margin: -10px;
+    }
     h2{
       text-rendering: optimizeSpeed;
       font-size: 50px;
@@ -33,11 +36,12 @@
       line-height: 70px;
       letter-spacing: .3px;
       position:relative;
-      top: 50px;
+      top: 30px;
       left: 200px;
       text-align: left;
       text-align-last: left;
       margin-right: 45%;
+      padding: 0;
     }
 
     p {
@@ -48,7 +52,7 @@
       color: #434343;
       letter-spacing: .3px;
       position:relative;
-      top: 0px;
+      top: -20px;
       left: 200px;
       text-align: left;
       text-align-last: left;
@@ -56,96 +60,87 @@
     }
 
 
-    /*Encabezado*/
-    .toolbar { 
-      position: absolute;
-      top: 0;
-      left: 30;
-      right: 0;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      background-color: #F2B477;
-      color: rgb(0, 0, 0);
-      font-weight: 900;
-      font-family: Helvetica;
-      font-size: 50px;
-      letter-spacing: 4px;
-    }
-
-    .toolbar .skill {
-      color: #FFFFFF; /* color blanco */
-    }
-        
-    .toolbar .up {
-      color: #1C748C; /* color azul */
-    }
-
-    .toolbar .navigation {
-      position: relative;
-      left: 500px;
-      display: flex;
-      align-items: center;
-      font-family: Arial;
-      font-size: 16px;
-    }
-    
-
-    .navigation a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    
-    .navigation a:hover {
-      color: #4b86b4;
-    }
-
-    .search-form {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      display: flex;
-      border-radius: 30px;
-      overflow: hidden;
-    }
-        
-    .search-form input[type="search"] {
-      width: 200px;
-      height: 40px;
-      padding: 10px;
-      border: none;
-      outline: none;
-      background-color: #fff;
-      font-size: 16px;
-      font-weight: bold;
-      border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px;
-    }
-    
-    .search-form button[type="submit"] {
-      width: 50px;
-      height: 40px;
-      padding: 0;
-      border: none;
-      outline: none;
-      background-color: #fff;
-      font-size: 16px;
-      color: #F2B477;
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
-    
-    .search-form button[type="submit"] i {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
+    .header {
+  overflow: hidden;
+  background-color: none;
+  padding: 20px 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+ 
+.header .search-bar {
+  float:left;
+  margin-bottom:auto;
+  margin-top:10px;
+}
+ 
+.header .search-bar input[type="text"] {
+  padding: 8px;
+  border-radius: 60px;
+  border: none;
+  margin-right: 6px;
+  margin-bottom:auto;
+  margin-top:auto;
+}
+ 
+.header .search-bar button[type="submit"] {
+  padding: 8px 12px;
+  border-radius: 60px;
+  background-color: #1C748C;
+  color: white;
+  border: none;
+}
+ 
+/* Style the header links */
+.header a {
+  float: left;
+  color: #434343;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  border-radius: 4px;
+  text-transform: none;
+  font-family: Helvetica;
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  font-weight: 900;
+}
+ 
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 50px;
+  font-weight: bold;
+  color: FFFFFF;
+  font-weight: 900;
+  font-family: Helvetica;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+}
+ 
+ 
+/* Change the color of up */
+.header a.logo .up {
+  color: #1C748C;
+}
+ 
+/* Change the background color on mouse-over */
+.header a:not(.logo):hover {
+  color: #1C748C;
+}
+ 
+/* Style the active/current link */
+.header a.active { 
+  color: #1C748C;
+}
+ 
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
 
 
     .content {
@@ -170,19 +165,23 @@
       padding: 100 25px;
       width: 45%;
       height: auto;
-
     }
 
     .card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 16px;
+      margin-top: 0px;
       font-family: Arial;
       font-size: 16px;
       font-weight: bold;
-      color: #FFFFFF; 
+      color: #FFFFFF;  
+      gap: 10px;
+      background-color: #F2B477;
     }
+    .card-container .card {
+  margin-right: 10px; /* Ajusta el valor de margen según tus necesidades */
+}
     
     .registro {
       all: unset;
@@ -248,20 +247,10 @@
       fill: rgb(105, 103, 103);
     }
 
-    svg#rocket {
-      width: 80px;
-      position: absolute;
-      left: -10px;
-      top: -24px;
-    }
-
-    svg#rocket-smoke {
-      height: calc(100vh - 95px);
-      position: absolute;
-      top: 10px;
-      right: 180px;
-      z-index: -10;
-    }
+    #clouds {
+      z-index:9999;
+  background-color:#F2B477
+}
 
 
     /*al pasar el maouse por un boton cambia de color sus letras*/
@@ -309,18 +298,21 @@
 
 <body>
   <!-- Toolbar -->
-  <div class="toolbar" role="banner">
-      <span class="skill">Skill</span><span class="up">Up</span>
-        <nav class="navigation">
-          <a href="#">INICIO</a>
-          <a href="#">SOBRE NOSOTROS</a>
-          <a href="#">NUESTRO PROYECTO</a>
-        </nav>
-        <form class="search-form">
-          <input type="search" placeholder="Buscar...">
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
+
+<header>
+    <div class="header">
+        <a href="#default" class="logo">Skill<span class="up">Up</span></a>
+        <div class="header-right">
+            <a rel="noopener" href="../app.component.html">Inicio</a>
+          <a href="#sn">Sobre Nosotros</a>
+          <a href="#about">Nuestro proyecto</a>
+          <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+            <button type="submit">Buscar</button>
+            </div> 
+        </div>
     </div>
+</header>
 
     <div class="imagen">
       <img src="https://www.revistacompensar.com/wp-content/uploads/2020/07/88.jpg" alt="imagen" class="derecha">
@@ -332,7 +324,7 @@
     <!-- Botones -->
     <h2><span style="color:#FFFFFF">Universitario en 
       busca de </span><span style="color:#1C748D">trabajo</span> 
-      <span style="color:#FFFFFF">en su área</span></h2>
+      <span style="color:#FFFFFF"> en su área</span></h2>
 
     <p>¿Eres estudiante y buscas oportunidades de trabajo? o  tal vez ¿buscas ampliar tus conocimientos con cursos enfocados a tu carrera?
       Definitivamente, SkillUP es la opción indicada para ti...
@@ -360,7 +352,6 @@
     </svg>
 
   </div>
-</body>
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
   <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
   <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -370,3 +361,4 @@
   <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
   <router-outlet></router-outlet>
+</body>
