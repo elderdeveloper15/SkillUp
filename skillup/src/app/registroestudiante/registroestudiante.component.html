@@ -2,6 +2,7 @@
     <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="registroestudiante.component.css">
     </head>
+ <body>   
  <div class="header">
         <a href="#default" class="logo">Skill<span class="up">Up</span></a>
         <div class="header-right">
@@ -40,15 +41,20 @@
                             <form>
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+                                <div *ngIf="!nombre" class="error-message">*Campo obligatorio</div>
                                 <label for="apellidos">Apellidos:</label>
                                 <input type="text" id="apellidos" name="apellidos" [(ngModel)]="apellidos">
+                                <div *ngIf="!apellidos" class="error-message">*Campo obligatorio</div>
                                 <label for="correo">Correo:</label>
                                 <input type="email" id="correo" name="correo" [(ngModel)]="correo">
+                                <div *ngIf="!correo" class="error-message">*Campo obligatorio</div>
                                 <label for="contraseña">Contraseña:</label>
                                 <input type="password" id="contraseña" name="contraseña" [(ngModel)]="password">
+                                <div *ngIf="!password" class="error-message">*Campo obligatorio</div>
                                 <label for="cv">Currículum (PDF):</label>
-                                <label for="cv" class="custom-file-upload">Seleccionar archivo</label>
+                                <label for="cv" class="custom-file-upload"></label>
                                 <input type="file" id="cv" name="cv" accept=".pdf" (change)="onFileSelected($event)">
+                                <div *ngIf="!cv" class="error-message">*Campo obligatorio</div>
                             </form>
                         </div>
                     </div>
@@ -65,4 +71,6 @@
             </div>
         </div>
         <button class="registrate" (click)="createStudent()">Regístrate!</button>
+        <div *ngIf="showMessage" class="mensaje">¡Registro exitoso! Regresa a Inicio e inicia sesión</div>
     </div>
+ </body>    

@@ -17,6 +17,7 @@ export class RegistroestudianteComponent {
   habilidades: string = "";
   password: string = "";
   cv: File | null = null;
+  showMessage: boolean = false;
 
   constructor(private http:HttpClient,private router: Router) { }
 
@@ -32,6 +33,10 @@ export class RegistroestudianteComponent {
   }
   
   createStudent() {
+    this.showMessage = true;
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 3000);
     this.getLastId().subscribe(data => {
       this.id = data.ultimoID;
       console.log(this.id);
