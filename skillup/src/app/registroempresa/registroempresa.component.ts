@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registroempresa',
@@ -16,7 +17,7 @@ export class RegistroempresaComponent {
   telefono: number = 0;
   verificada: boolean = false;
 
-  constructor(private http:HttpClient){}
+  constructor(private http:HttpClient,private router: Router) { }
 
   getLastId(){
     return this.http.get<any>('http://localhost:8080/api/empresa/lastid');
@@ -42,5 +43,10 @@ export class RegistroempresaComponent {
         console.log("ya jalo");
       });
     });
+  }
+
+  irAEstudiante(){
+    this.router.navigate(['/registroestudiante'])
+
   }
 }

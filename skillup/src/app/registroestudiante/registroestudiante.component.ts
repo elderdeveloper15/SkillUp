@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registroestudiante',
@@ -17,7 +18,7 @@ export class RegistroestudianteComponent {
   password: string = "";
   cv: File | null = null;
 
-  constructor(private http:HttpClient){}
+  constructor(private http:HttpClient,private router: Router) { }
 
 
   onFileSelected(event: any) {
@@ -50,6 +51,11 @@ export class RegistroestudianteComponent {
         console.log("ya jalo");
       });
     });
+  }
+
+  irAEmpresa(){
+    this.router.navigate(['/registroempresa'])
+
   }
 
 }
