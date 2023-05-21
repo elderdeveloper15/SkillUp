@@ -21,27 +21,14 @@
               <span class="texto">VERIFICAR EMPRESAS</span>
             </div>
             <div class="row2">
-                <div class="search-bar">
-                  <input type="text" placeholder="Buscar">
-                  <button type="submit">Buscar</button>
-                </div>
-                <div class="empresas-container">
+                <div class="empresas-container" *ngFor="let empresa of empresas">
                   <div class="empresa">
-                    <h2>Nombre: fee</h2>
-                    <p>Correo: wrrer</p>
-                    <p>RFC: werwr</p>
-                    <p>Dirección: efer</p>
+                    <h2>Nombre: {{ empresa.nombre }}</h2>
+                    <p>Correo: {{ empresa.correo }}</p>
+                    <p>RFC: {{ empresa.rfc }}</p>
+                    <p>Dirección: {{ empresa.domicilio }}</p>
                     <div class="botones-empresa">
-                      <button class="boton-activar">Activar</button>
-                    </div>
-                  </div> 
-                  <div class="empresa">
-                    <h2>Nombre: fee</h2>
-                    <p>Correo: wrrer</p>
-                    <p>RFC: werwr</p>
-                    <p>Dirección: efer</p>
-                    <div class="botones-empresa">
-                      <button class="boton-activar">Activar</button>
+                      <button class="boton-activar" (click)="verificar(empresa.id)">Activar</button>
                     </div>
                   </div>   
                 </div>

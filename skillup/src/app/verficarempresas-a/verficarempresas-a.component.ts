@@ -25,5 +25,24 @@ export class VerficarempresasAComponent {
 
   constructor(private route: ActivatedRoute,private http:HttpClient,private router: Router) { }
 
+  ngOnInit(){
+
+    this.http.get<any>('http://localhost:8080/api/empresa/verificados').subscribe(data => {     
+        this.empresas = data;  
+        console.log(this.empresas)   
+      });
+  }
+
+  verificar(id_empresa:number){
+    const body = { params:
+      {
+        "id": id_empresa
+      }
+    };
+    console.log(body)
+    this.http.get<any>('http://localhost:8080/api/empresa/activate',body).subscribe(data => {
+      console.log("ya jalo");
+    });
+  }
 
 }

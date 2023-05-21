@@ -12,6 +12,9 @@ module.exports = app => {
     // Retrieve all published empresa
     router.get("/published", empresa.findAllPublished);
 
+    //Activate account for a empresa
+    router.get("/activate",empresa.activateAccount);
+
     //Retrieve the last ID of all the enterprises
     router.get("/lastid",empresa.lastID);
   

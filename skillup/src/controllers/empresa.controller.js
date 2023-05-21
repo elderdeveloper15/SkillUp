@@ -176,6 +176,26 @@ exports.checkAccount = async (req, res) => {
   }
 };
 
+exports.activateAccount = async (req, res) => {
+  try {
+    const { id } = req.query;
+
+    const empresa = await Empresa.findByPk(id);
+
+    if (!empresa) {
+      return res.status(404).json({ message: 'Empresa no encontrada' });
+    }
+
+    empresa.verificada = true;
+    await empresa.save();
+
+    return res.json({ message: 'Cuenta activada correctamente' });
+  } catch (error) {
+    console.error('Error al activar la cuenta:', error);
+    return res.status(500).json({ message: 'Error al activar la cuenta' });
+  }
+};
+
 exports.deleteAll = (req, res) => {
   
 };
