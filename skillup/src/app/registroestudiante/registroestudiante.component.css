@@ -169,6 +169,7 @@ body {
 .grid-item-2 {
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 }
 
 .a, .button-container button { 
@@ -221,7 +222,7 @@ body {
 .form-container input[type="password"],
 .form-container input[type="file"] {
   width: 100%;
-  padding: 2%;
+  padding: 3%;
   margin-top: 1px;
   border-color: #ccc;
   border-width: 1px;
@@ -264,6 +265,14 @@ body {
   border-bottom-left-radius: 30px;
 }
 
+.mensaje {
+  margin-top: 10px;
+  color:#1C748C;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(28, 116, 140, 0.6);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: transparent;
@@ -276,7 +285,11 @@ body {
   height: 50px;
   }
 
-
+  .error-message {
+    color: red;
+    font-size: smaller;
+    margin-bottom: 10px;
+  }
 /* Responsive Styles */
 
 @media screen and (max-width: 500px) {

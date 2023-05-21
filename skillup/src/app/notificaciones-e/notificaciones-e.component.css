@@ -1,7 +1,6 @@
 .row2 {
-    border-right: 1px solid black; /* Borde derecho de 1px de grosor y color negro */
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+
+    
     flex-grow: 1; /* Ocupa el espacio restante verticalmente */
     display: flex; /* Utilizar Flexbox */
     justify-content: center; /* Alinear contenido horizontalmente en el centro */
@@ -67,3 +66,18 @@
       text-align: right;
       margin-top: 20px;
     }
+
+    .titulo-notificaciones {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bolder;
+      text-align: center;
+      font-size: 50px;
+      color:#1C748C;
+      letter-spacing: 4px;
+    }
+    .rectangulo {
+      width: 200px;
+      height: 400px;
+      background-color: #f2b477;
+    }
+    

@@ -13,6 +13,11 @@ body {
   overflow-y: auto;
 
 }
+.error-message {
+  color: red;
+  font-size: smaller;
+  margin-bottom: 10px;
+}
 
 /*BARRA SUPERIOR*/
 .header {
@@ -204,7 +209,7 @@ body {
   .form-container {
     width: 80%;
     padding: 3px;
-    margin-left: 5vw;
+    margin-left: 10%;
   }
   
   .form-container form {
@@ -265,7 +270,16 @@ body {
     border-bottom-right-radius: 30px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    margin-top: 25px;
   }
+  .mensaje {
+    margin-top: 10px;
+    color:#1C748C;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(28, 116, 140, 0.6);
+  }
+  
   
   ::-webkit-scrollbar {
     width: 10px;

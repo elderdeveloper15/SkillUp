@@ -16,6 +16,7 @@ export class RegistroempresaComponent {
   correo: string = "";
   telefono: number = 0;
   verificada: boolean = false;
+  showMessage: boolean = false;
 
   constructor(private http:HttpClient,private router: Router) { }
 
@@ -24,6 +25,10 @@ export class RegistroempresaComponent {
   }
   
   createStudent() {
+    this.showMessage = true;
+        setTimeout(() => {
+          this.showMessage = false;
+        }, 3000);
     this.getLastId().subscribe(data => {
       this.id = data.ultimoID;
       console.log(this.id);
@@ -37,6 +42,7 @@ export class RegistroempresaComponent {
         "correo": this.correo,
         "telefono": this.telefono,
         "verificada": this.verificada
+
       };
 
       this.http.post<any>('http://localhost:8080/api/empresa', body).subscribe(data => {
