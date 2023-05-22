@@ -7,8 +7,8 @@
     .grind-layout {
         height: 700px;
         display: grid;
-        grid-template-areas: 'encabezado' 'tipo' 'publicaciones';
-        grid-template-rows: 15% 7% auto;
+        grid-template-areas: 'encabezado' 'tipo' 'publicaciones' 'bienve';
+        grid-template-rows: 15% 10% 55% 20%;
         background-color: #ffffff;
     }
 /**************** Encabezado *************************/
@@ -22,28 +22,6 @@
         align-items: center;
     }
  
-    .header .search-bar {
-      float:left;
-      margin-bottom:auto;
-      margin-top:10px;
-    }
-     
-    .header .search-bar input[type="text"] {
-      padding: 8px;
-      border-radius: 60px;
-      border: none;
-      margin-right: 6px;
-      margin-bottom:auto;
-      margin-top:auto;
-    }
-     
-    .header .search-bar button[type="submit"] {
-      padding: 8px 12px;
-      border-radius: 60px;
-      background-color: #1C748C;
-      color: white;
-      border: none;
-    }
      
     /* Style the header links */
     .header a {
@@ -121,6 +99,9 @@
         display: grid;
         grid-template-areas: 'trabajo crear curso';
         grid-template-columns: 30% 40% 30%;
+        margin-top: 5px;
+        font-size: 20px;
+        font-style: italic;
         justify-content: center;
         text-align: center;
         align-items: center;
@@ -132,9 +113,10 @@
         width:100%;
         height:100%;
         color: #ffffff;
-        font-size: 12px;
+        font-size: 15px;
+        padding: 20px 100px; 
         border:none;
-        background-color: #1C748C;
+        background-color: #434343;
     }
     
     .curs button{
@@ -142,77 +124,57 @@
         width:100%;
         height:100%;
         color: #ffffff;
-        font-size: 12px;
+        font-size: 15px;
+        padding: 20px 100px;
         border:none;
-        background-color: #1C748C;
+        background-color: #434343;
     }
     
-    .prof button{
-        grid-area: trabajo;
-        width:100%;
-        height:100%;
-        color: #ffffff;
-        font-size: 12px;
-        border:none;
-        background-color: #1C748C;
-    }
     
     
 
 /**************************************************************/
 
+    .bienvenido{
+        grid-area: bienve;
+        margin-top: 5px;
+        font-size: 40px;
+        color: #000000;
+        margin-top:5%;
+        font-style: italic;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
+        align-items: center;
+    }
 
 /************* Publicaciones ********************/
-    .publicaciones {
+    .botonescontrol{
         grid-area: publicaciones;
         background-color: #ffffff;
         display: grid;
-        grid-template-rows: minmax(100px, auto);
+        grid-template-areas: 'perfil admin notis';
+        grid-template-columns: 33% 34% 33%;
+        margin-top:10px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
         
     }
     
-    .publi{
-        background-color: #efefef;
-        width: 100%;
-        height: 250px;
-        display: grid;
-        grid-template-areas: 'nombre imge';
-        grid-template-columns: 60% 40%;
-        border:10px solid white;
-        text-align: start;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .publi h2{
-        margin-left: 20px;
-    }
-    
-    .publi label{
-        margin-left: 20px;
-        font-size: 14px;
-    }
-    
-    .publi button{
-        width: 150px;
-        height: 25px;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
-        background-color: #666666;
-        border: none;
+    .botonescontrol button{
+        grid-area: trabajo;
+        width:100%;
+        padding: 150px 100px; 
+        height:100%;
         color: #ffffff;
+        font-size: 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        border: 10px solid white;
+        background-color: #1C748C;
     }
-    
-    .publi a:hover{
-        color: #F2B477;
-    }
-    
-    .publi img{
-        max-width: 100%;
-        max-height: 100%;
-    }
-  
+
     
 /**************************************************************/
 
@@ -239,63 +201,32 @@
             <a class="active" href="#inicio">Inicio</a>
             <a href="#sn">Sobre Nosotros</a>
             <a href="#about">Nuestro proyecto</a>
-            <div class="search-bar">
-              <input type="text" placeholder="Buscar">
-              <button type="submit">Buscar</button>
-            </div>
             
           </div>
         </div>
         
         <div class="tipopublicacion">
-            <br><br>
-            <a>Bienvenido: {{ correo }}</a>
-            <br>
             <div class="trab">
-                <button (click)="crearPublicacionT()">Oferta de trabajo</button>
+                <button (click)="crearPublicacionT()">Agregar nuevo trababjo</button>
             </div>
-            <div class="crear">Crear una nueva publicación</div>
+            <div class="crear"></div>
             <div class="curs">
-                 <button (click)="crearPublicacionC()">Curso</button>
+                 <button (click)="crearPublicacionC()">Agregar nuevo curso</button>
             </div>
         </div>
-        <div>
-            <button (click)="administrarPerfil()">Perfil</button>
-        </div>
-        <div>
-            <button (click)="administrarPublicaciones()">Administrar publicaciones</button>
-       </div>
-       <div>
-        <button (click)="notificaciones()">Mis Notificaciones</button>
-        </div>
-        <div class="publicaciones">
-            <div class="publi">
-                <div class="info">
-                    <h2>Nombre del trabajo</h2> 
-                    <label>Información de contacto</label><br>
-                    <button>Eliminar</button>
-                    <a herf=""> Modificar ></a>
-                </div>
-                
-                <div class="info">
-                    <img src="" alt="Mi imagen">
-                </div>
-                
+        <div class = "botonescontrol">
+            <div class = perfil>
+                <button (click)="administrarPerfil()">Perfil</button>
             </div>
-            
-            <div class="publi">
-                <div class="info">
-                    <h2>Nombre del trabajo</h2> 
-                    <label>Información de contacto</label><br>
-                    <button>Eliminar</button>
-                    <a herf=""> Modificar ></a>
-                </div>
-                
-                <div class="info">
-                    <img src="" alt="Mi imagen">
-                </div>
-                
+            <div class = "adminPublic">
+                <button (click)="administrarPublicaciones()">Administrar publicaciones</button>
             </div>
+            <div class = "notis">
+                <button (click)="notificaciones()">Mis Notificaciones</button>
+            </div>
+        </div>
+        <div class = "bienvenido">
+            <a>Bienvenido: {{ correo }}</a>
         </div>
     </div>
 </body>
