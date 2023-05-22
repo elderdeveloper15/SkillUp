@@ -271,6 +271,34 @@
   color: white;
   border: none;
 }
+.carrera select {
+  
+  background-color: #E6F4F8;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.carrera select::-ms-expand {
+  display: none;
+}
+
+.option {
+  background-color:#1C748C;
+  color: #333;
+}
+
+.carrera select:hover {
+  background-color: #1C748C;
+  color: black;
+}
+
+.carrera select:hover option {
+  background-color: #1C748C;
+  color: white;
+}
 
 
 </style>
@@ -303,7 +331,7 @@
           </div>
       </div>
       <div class="carrera">
-          <label for="mi-select">Te ofrecemos, los mejores cursos. No olvides selección tu carrera de trabajo para tener una busqueda más personalizada.
+          <label for="mi-select">¡Contamos con las mejores ofertas de trabajo! No olvides seleccionar tu área de interés para tener una búsqueda más personalizada.
           </label>
           <select id="mi-select" name="mi-select" [(ngModel)]="area_seleccionada" (change)="filtrar()">
               <option value="">Selecciona tu carrera</option>
