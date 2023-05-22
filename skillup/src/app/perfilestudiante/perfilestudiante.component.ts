@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+declare var window: any;
+
 interface estudiante{
   id: number;
   nombre: string;
@@ -86,6 +88,7 @@ export class PerfilestudianteComponent {
     this.http.put<any>(url, body).subscribe(data => {
       console.log("ya jalo");
     });
+    window.location.reload();
   }
 
   onFileSelected(event: any) {
