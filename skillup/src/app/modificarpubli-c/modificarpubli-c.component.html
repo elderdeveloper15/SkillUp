@@ -62,8 +62,9 @@
           </div>
         </div>
         <div class="element-5">
-            <button (click)="publicar()"  type="submit" value="Publicar"> </button>
+          <button class="guardar" (click)="publicar()" type="submit" value="Publicar">GUARDAR</button>
         </div>
+        <div *ngIf="showMessage" class="mensaje">La publicación ha sido modificada</div>
       </div>
     </div>
 </div>

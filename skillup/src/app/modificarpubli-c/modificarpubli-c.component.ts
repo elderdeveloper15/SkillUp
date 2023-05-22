@@ -38,6 +38,7 @@ export class ModificarpubliCComponent implements OnInit {
   estatus: boolean = true;
   titulo: string = "";
   descripcion: string = "";
+  showMessage: boolean = false;
 
   publicaciones: Publicacion[] = [];
 
@@ -70,6 +71,10 @@ export class ModificarpubliCComponent implements OnInit {
   }
 
   publicar(){
+    this.showMessage = true;
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 3000);
     const body = {
       "id": this.id_modificar,
       "costo": this.costo,

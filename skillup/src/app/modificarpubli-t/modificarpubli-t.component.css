@@ -236,21 +236,20 @@ textarea::placeholder {
     justify-content: center; /* Centra horizontalmente */
 }
 
-.element-5 input[type="submit"] {
-    background-color: #f2b477;
-    color: #ffffff;
-    padding: 15px 40px;
-    font-size: 18px;
-    letter-spacing: 2px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
+.element-5 .guardar {
+  background-color: #f2b477;
+  color: #ffffff;
+  padding: 10px 40px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 30px;
 }
-  
-.element-5 input[type="submit"]:hover {
-    /* Estilos cuando el botón está en hover */
-    background-color: #e89f6b;
-}
+
+.element-5 .guardar:hover {
+  background-color: #e89f6b;}
 
     ::-webkit-scrollbar {
         background-color:transparent;
@@ -289,3 +288,12 @@ textarea::placeholder {
     background-color: black;
     z-index: 9999; /* Asegura que se superponga sobre todo */
   }
+  .mensaje {
+    margin-top: 10px;
+    color:#1C748C;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(28, 116, 140, 0.6);
+    text-align: center;
+  }
+  

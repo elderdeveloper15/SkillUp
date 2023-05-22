@@ -289,4 +289,10 @@ textarea::placeholder {
     z-index: 9999; /* Asegura que se superponga sobre todo */
   }
 
-
+  .titulo-notificaciones {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+  }
+  
