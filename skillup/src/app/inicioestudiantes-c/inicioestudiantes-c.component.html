@@ -348,7 +348,8 @@
             <button type="submit" (click)="buscar()">Buscar</button>
           </div>
           <div class="publicaciones-container">
-            <div class="publicacion" *ngFor="let publicacion of publicaciones">
+            <div *ngFor="let publicacion of publicaciones">
+              <div class="publicacion" *ngIf="publicacion.estatus">
               <h2>{{ publicacion.titulo }}</h2>
               <p>Área: {{ publicacion.area }}</p>
               <p>Costo: {{ publicacion.costo }}</p>
@@ -362,6 +363,7 @@
                 <button class="boton-modificar" (click)="notificar(publicacion.id, publicacion.id_empresa)">Mandar notificación!</button>
               </div>
             </div>  
+          </div>
           </div>
       </div>
   </div>
