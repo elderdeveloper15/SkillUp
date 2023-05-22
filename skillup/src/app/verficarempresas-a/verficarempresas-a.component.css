@@ -90,8 +90,9 @@
       color: #1C748C;
       font-family:helvetica;
       font-weight:bolder;
-      font-size:20;
+      font-size:30px;
       background-color: #E6F4F8;
+      margin-bottom: 60px;
     }
     
     .row2 {
@@ -145,6 +146,8 @@
         width: 60%;
         min-width: 400px;
         align-items:center;
+        color:#434343;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .boton-activar {

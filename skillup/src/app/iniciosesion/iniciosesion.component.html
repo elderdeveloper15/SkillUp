@@ -18,7 +18,7 @@
       top: -275;
       left: 325px;
       text-align: center;
-      text-align-last: left;
+      text-align-last: left; 
   }
 
   h1{
@@ -34,6 +34,7 @@
       left: 0%;
       text-align: center;
       text-align-last: center;
+      margin-left:10px;
   }
 
   form {
@@ -50,91 +51,8 @@
       text-align: right;
       text-align-last: left;
       font-weight: bold;
+      margin-left:10px;
     }
-
-
-  /*Encabezado*/
-  .toolbar { 
-    position: absolute;
-    top: 0;
-    left: 30;
-    right: 0;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    background-color: #1C748C;
-    color: rgb(0, 0, 0);
-    font-weight: 900;
-    font-family: Helvetica;
-    font-size: 50px;
-    letter-spacing: 4px;
-  }
-
-
-  .toolbar .navigation {
-    position: relative;
-    left: 500px;
-    display: flex;
-    align-items: center;
-    font-family: Arial;
-    font-size: 16px;
-  }
-  
-
-  .navigation a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .navigation a:hover {
-    color: #F2B477;
-  }
-
-  .search-form {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    display: flex;
-    border-radius: 30px;
-    overflow: hidden;
-  }
-      
-  .search-form input[type="search"] {
-    width: 200px;
-    height: 40px;
-    padding: 10px;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-  }
-  
-  .search-form button[type="submit"] {
-    width: 50px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    outline: none;
-    background-color: #fff;
-    font-size: 16px;
-    color: #F2B477;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
-  
-  .search-form button[type="submit"] i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
 
   .cajatexto{
     width: 200px;
@@ -144,9 +62,11 @@
     font-weight: bold;
     flex-direction: row;
     align-self: flex-start;
+    margin-left:70px;
   }
 
   .cajatexto input[type="text"]{
+
     width: 400px;
     height: 40px;
     font-size: 14px;
@@ -154,6 +74,15 @@
     background-color: #ffffff;
     border-color: #050505;
   }
+  .cajatexto input[type="password"]{
+
+width: 400px;
+height: 40px;
+font-size: 14px;
+margin-bottom: 50px;
+background-color: #ffffff;
+border-color: #050505;
+}
 
   .cajatexto label{
     font-size: 16px;
@@ -212,11 +141,12 @@
   /*cuadro blanco*/
   .white-box {
         margin-top: 1px;
+        margin-left:10px;
         position: absolute;
         top: 15%;
         left: 55%;
         /*transform: translate(-50%, -50%);*/
-        width: 35%;
+        width: 37%;
         height: 70%;
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -243,27 +173,9 @@
 
 </style>
 
-<body style="background-color: #1C748C;"></body>
-  <!-- Toolbar -->
-<div class="toolbar" role="banner">
-    <nav class="navigation">
-      <a href="#">INICIO</a>
-      <a href="#">SOBRE NOSOTROS</a>
-      <a href="#">NUESTRO PROYECTO</a>
-    </nav>
-    <form class="search-form">
-      <input type="search" placeholder="Buscar...">
-      <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
-</div>
 
 
-<div class="imagen">
-  <img src="https://sac-webapp-live.s3.amazonaws.com/static/icons/ICONOS-27.png" alt="imagen" class="derecha">
-  <h2>
-    <span style="color:#FFFFFF">Skill</span><span style="color:#F2B477">Up</span>
-  </h2>
-</div>
+
 
   <!-- RECTÁNGULO BLANCO -->
 <div class="white-box">
@@ -280,7 +192,7 @@
     <label for="nombre">EMAIL</label>
     <input type="text" id="nombre" name="nombre" [(ngModel)]="correo">
     <label for="nombre">CONTRASEÑA</label>
-    <input type="password" type="text" id="nombre" name="nombre" [(ngModel)]="password">
+    <input type="password" id="nombre" name="nombre" [(ngModel)]="password">
     <button (click)="iniciarSesion()" >Iniciar Sesion</button>
 
     <p>¿No tienes una cuenta?<br>
@@ -291,10 +203,6 @@
 
  
   
-  <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="358.677" viewBox="0 0 2611.084 358.677">
-    <title>Gray Clouds Background</title>
-    <path id="Path_39" data-name="Path 39" d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z" transform="translate(142.69 -634.312)" fill="#FFFFFF"/>
-  </svg>
 
   
 </div>

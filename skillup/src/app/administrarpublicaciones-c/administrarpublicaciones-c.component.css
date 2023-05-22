@@ -120,7 +120,6 @@
     .row2 {
       border-right: 1px solid black; /* Borde derecho de 1px de grosor y color negro */
       border-left: 1px solid black;
-      border-bottom: 1px solid black;
       flex-grow: 1; /* Ocupa el espacio restante verticalmente */
       display: flex; /* Utilizar Flexbox */
       justify-content: center; /* Alinear contenido horizontalmente en el centro */
@@ -161,6 +160,7 @@
       background-color: #f2f2f2;
       padding: 10px;
       margin-bottom: 40px;
+      color:#434343;
     }
 
     .publicaciones-container {
@@ -168,6 +168,7 @@
         width: 60%;
         min-width: 400px;
         align-items:center;
+        color: #434343;
     }
 
     .boton-modificar,
@@ -257,6 +258,9 @@
   border-radius: 0;
   outline: none;
 }
+
+.rectangulo{height: 440px;
+background-color: #FFFFFF;}
 
 
     ::-webkit-scrollbar {
